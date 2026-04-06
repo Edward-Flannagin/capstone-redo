@@ -1,0 +1,141 @@
+:root {
+  --ll-green: #495E57;
+  --ll-yellow: #F4CE14;
+  --ll-orange: #EE9972;
+  --ll-light-gray: #EDEFEE;
+  --ll-dark: #333333;
+  --ll-white: #FFFFFF;
+}
+
+/* Remove native spinner visuals */
+/* .custom-number input::-webkit-inner-spin-button,
+.custom-number input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+/* .custom-number input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+.custom-number {
+  width: 100%;
+  border-radius: 16px;
+  border-width: 3px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Match dropdown-toggle padding height */
+.custom-number input {
+  padding: 10px 12px; /* same as dropdown-toggle */
+  font-size: 16px;    /* same text size */
+}
+
+.custom-number {
+  width: 100%;
+  border-radius: 16px;
+  border-width: 3px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Match dropdown-toggle padding height */
+.custom-number input {
+  padding: 10px 12px; /* same as dropdown-toggle */
+  font-size: 16px;    /* same text size */
+}
+
+/* Match arrow column height visually */
+.custom-number .buttons button {
+  height: 24px; /* aligns better with the dropdown height */
+}
+
+/* Optional: match margin-top behavior */
+.custom-number {
+  margin-top: 5px; /* same as .dropdown-wrapper */
+}
+
+/* Optional: match margin-top behavior */
+.custom-number {
+  margin-top: 5px; /* same as .dropdown-wrapper */
+}
+
+
+/* Container is the single rectangle */
+.custom-number {
+  display: flex;
+  align-items: stretch;
+  border: 3px solid var(--ll-green);
+  border-radius: 16px;
+  background: var(--ll-white);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.15s ease;
+  box-shadow: none;
+}
+
+/* Hover and focus states for the whole rectangle */
+.custom-number:hover,
+.custom-number:focus-within {
+  border-color: #334238;
+  box-shadow: 0 2px 6px rgba(51,66,56,0.06);
+}
+
+/* Input occupies remaining space and visually blends into the container */
+.custom-number input {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  flex: 1 1 auto;
+  padding: 12px 16px;
+  margin: 0;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  background: transparent;
+  color: var(--ll-dark);
+  text-align: left;
+}
+
+/* Buttons area sits flush on the right and shares the same background */
+.custom-number .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 44px; /* fixed width for arrows column */
+  background: transparent;
+}
+
+/* Optional subtle divider between number and arrows */
+.custom-number .divider {
+  width: 1px;
+  background: rgba(73,94,87,0.12);
+  margin: 8px 0;
+}
+
+/* Buttons are visually minimal and centered */
+.custom-number .buttons button {
+  border: none;
+  background: transparent;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--ll-green);
+  transition: background 0.12s ease, color 0.12s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+}
+
+/* Hover/focus for buttons */
+.custom-number .buttons button:hover,
+.custom-number .buttons button:focus {
+  background: rgba(73,94,87,0.08);
+  color: #334238;
+}
+
+/* Make sure icons scale nicely */
+.custom-number .buttons i {
+  font-size: 14px;
+  line-height: 1;
+}

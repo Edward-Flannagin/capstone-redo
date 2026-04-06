@@ -1,0 +1,745 @@
+/* OrderOnline Container and Header */
+.order-online-container {
+  background: linear-gradient(135deg, #495e57 0%, #495e57 50%, #F4CE14 100%);
+  min-height: 100vh;
+  padding: 40px 70px;
+}
+
+.order-online-header {
+  width: 100vw;
+  margin: 0 auto 40px;
+  margin: 0 auto 40px;
+  margin-top: 70px;
+  padding-top: clamp(32px, 5vw, 48px);
+  padding-right: 16px;
+  padding-bottom: 0;
+  padding-left: 16px;
+  color: #fff;
+  align-self: flex-start;
+  box-sizing: border-box;
+}
+
+.order-online-title {
+  font-family: "Markazi Text", serif;
+  margin: 0 auto 40px;
+  margin-top: 70px;
+  padding-top: clamp(32px, 5vw, 48px);
+  padding-right: 16px;
+  padding-bottom: 0;
+  padding-left: 16px;
+  font-size: 64pt;
+  padding-top: 30px;
+  font-weight: 600;
+  margin: 0;
+  color: #F4CE14;
+}
+
+.order-online-subtitle {
+  font-family: "Karla", sans-serif;
+  font-size: 20pt;
+  font-weight: 400;
+  padding-left: 16px;
+  margin: 0;
+  color: #edefee;
+  letter-spacing: 0.5px;
+}
+
+/* Main Content Layout - 3 Column */
+.order-online-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 220px 1fr 300px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* SIDEBAR - Categories */
+.category-sidebar {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+}
+
+.category-title {
+  font-family: "Markazi Text", serif;
+  font-size: 28px;
+  color: #495e57;
+  margin: 0 0 15px;
+  text-align: center;
+}
+
+.category-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-button {
+  background: #edefee;
+  color: #333333;
+  border: 2px solid transparent;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.category-button:hover {
+  background: #f4ce14;
+  color: #333333;
+  border-color: #495e57;
+  transform: translateX(5px);
+}
+
+.category-button.active {
+  background: #495e57;
+  color: white;
+  border-color: #495e57;
+}
+
+/* MENU ITEMS GRID */
+.menu-items-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.menu-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.menu-item-card-wrapper {
+  display: flex;
+}
+
+.card-image {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  object-fit: cover;
+}
+
+.order-online-menu-card {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.order-online-menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.order-online-menu-card .card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title-price {
+  margin-bottom: 10px;
+}
+
+.order-card-title {
+  font-family: "Markazi Text", serif;
+  font-size: 22px;
+  color: #333333;
+  margin: 0 0 5px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.order-card-price {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  color: #f4ce14;
+  font-weight: 700;
+  margin: 0;
+}
+
+.order-card-text {
+  font-family: "Karla", sans-serif;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.add-to-cart-btn {
+  background: #495e57;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.add-to-cart-btn:hover {
+  background: #ee9972;
+  transform: scale(1.05);
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.98);
+}
+
+/* SIDEBAR - Shopping Cart */
+.shopping-cart-sidebar {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.cart-title {
+  font-family: "Markazi Text", serif;
+  font-size: 24px;
+  color: #495e57;
+  margin: 0 0 20px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f4ce14;
+}
+
+.cart-empty {
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+  padding: 40px 20px;
+  margin: 0;
+}
+
+.cart-items {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #edefee;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 10px;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-name {
+  font-family: "Karla", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.cart-item-price {
+  font-family: "Karla", sans-serif;
+  font-size: 13px;
+  color: #f4ce14;
+  font-weight: 700;
+  margin: 0;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.qty-btn {
+  background: #495e57;
+  color: white;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.qty-btn:hover {
+  background: #ee9972;
+}
+
+.qty-display {
+  font-family: "Karla", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333333;
+  min-width: 16px;
+  text-align: center;
+}
+
+.cart-summary {
+  padding-top: 15px;
+}
+
+.tax {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  color: #333333;
+}
+
+.tax span:first-child {
+  font-weight: 500;
+}
+
+.tax-amount {
+  color: #f4ce14;
+  font-weight: 700;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f4ce14;
+}
+
+.cart-total span:first-child {
+  font-family: "Markazi Text", serif;
+  font-size: 24px;
+  color: #495e57;
+  font-weight: 700;
+}
+
+.total-amount {
+  font-family: "Markazi Text", serif;
+  font-size: 28px;
+  color: #f4ce14;
+  font-weight: 700;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #f4ce14;
+  color: #333333;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.checkout-btn:hover {
+  background: #ee9972;
+  color: white;
+  transform: scale(1.02);
+}
+
+.checkout-btn:active {
+  transform: scale(0.98);
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet - 1200px and below */
+@media (max-width: 1200px) {
+  .order-online-content {
+    grid-template-columns: 1fr 280px;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+/* Mobile Tablet - 768px and below */
+@media (max-width: 768px) {
+  .order-online-container {
+    padding: 20px 15px;
+  }
+
+  .order-online-header {
+    margin-bottom: 30px;
+  }
+
+  .order-online-title {
+    font-size: 44px;
+  }
+
+  .order-online-subtitle {
+    font-size: 16px;
+  }
+
+  .order-online-content {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-items-section {
+    padding: 20px;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .category-sidebar,
+  .shopping-cart-sidebar {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .category-sidebar {
+    order: 1;
+    flex: 0 0 auto;
+  }
+
+  .shopping-cart-sidebar {
+    order: 2;
+    flex: 1 1 auto;
+    height: auto;
+    max-height: none;
+  }
+
+  .category-filters,
+  .cart-items {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .category-button {
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .menu-items-section {
+    order: 3;
+    width: 100%;
+  }
+}
+
+/* Small Mobile - 480px and below */
+@media (max-width: 480px) {
+  .order-online-container {
+    padding: 15px 10px;
+  }
+
+  .order-online-title {
+    font-size: 36px;
+  }
+
+  .order-online-subtitle {
+    font-size: 14px;
+  }
+
+  .order-online-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .order-online-menu-card .card-body {
+    padding: 12px;
+  }
+
+  .order-card-title {
+    font-size: 16px;
+  }
+
+  .order-card-price {
+    font-size: 14px;
+  }
+
+  .order-card-text {
+    font-size: 11px;
+  }
+
+  .add-to-cart-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .category-sidebar,
+  .shopping-cart-sidebar {
+    margin-bottom: 15px;
+  }
+
+  .cart-items {
+    max-height: 200px;
+  }
+}
+
+/* Delivery Options Modal */
+.delivery-options-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.delivery-options-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.delivery-options-title {
+  font-family: "Markazi Text", serif;
+  font-size: 36pt;
+  color: #495E57;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.delivery-options-subtitle {
+  font-family: "Karla", sans-serif;
+  font-size: 16pt;
+  color: #666;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.delivery-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.delivery-option {
+  border: 2px solid #EDEFEE;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  background: white;
+}
+
+.delivery-option:hover {
+  border-color: #F4CE14;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-option.selected {
+  border-color: #F4CE14;
+  background: #FFF8E1;
+  box-shadow: 0 0 0 3px rgba(244, 206, 20, 0.2);
+}
+
+.option-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.delivery-option h3 {
+  font-family: "Markazi Text", serif;
+  font-size: 24pt;
+  color: #495E57;
+  margin: 0 0 10px 0;
+}
+
+.delivery-option p {
+  font-family: "Karla", sans-serif;
+  font-size: 14pt;
+  color: #666;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.option-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #EDEFEE;
+}
+
+.fee {
+  font-family: "Karla", sans-serif;
+  font-size: 12pt;
+  font-weight: 600;
+  color: #F4CE14;
+}
+
+.time {
+  font-family: "Karla", sans-serif;
+  font-size: 12pt;
+  color: #666;
+}
+
+.delivery-form {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #F8F9FA;
+  border-radius: 8px;
+}
+
+.delivery-form h4 {
+  font-family: "Karla", sans-serif;
+  font-size: 16pt;
+  color: #495E57;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.delivery-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #EDEFEE;
+  border-radius: 8px;
+  font-family: "Karla", sans-serif;
+  font-size: 14pt;
+  transition: border-color 0.3s ease;
+}
+
+.delivery-input:focus {
+  outline: none;
+  border-color: #F4CE14;
+}
+
+.delivery-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.delivery-back-btn,
+.delivery-continue-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: "Karla", sans-serif;
+  font-size: 14pt;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.delivery-back-btn {
+  background: #EDEFEE;
+  color: #495E57;
+  border: 2px solid #495E57;
+}
+
+.delivery-back-btn:hover {
+  background: #495E57;
+  color: white;
+}
+
+.delivery-continue-btn {
+  background: #F4CE14;
+  color: #333;
+  border: 2px solid #F4CE14;
+}
+
+.delivery-continue-btn:hover:not(:disabled) {
+  background: #EE9972;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.delivery-continue-btn:disabled {
+  background: #EDEFEE;
+  color: #999;
+  border-color: #EDEFEE;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .delivery-options {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-actions {
+    flex-direction: column;
+  }
+
+  .delivery-options-modal {
+    padding: 1.5rem;
+    margin: 10px;
+  }
+
+  .delivery-options-title {
+    font-size: 28pt;
+  }
+}

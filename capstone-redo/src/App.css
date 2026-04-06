@@ -1,21 +1,1432 @@
-.App {
+@import url('https://fonts.googleapis.com');
+
+/* COLORS:
+   primary 1: #495E57,   primary 2: #F4CE14
+   secondary 1: #EE9972, secondary 2: #FBDABB
+   secondary 3: #EDEFEE, secondary 4: #333333
+*/
+
+/* :root {
+  --ll-p-green: #495e57;
+  --ll-p-yellow: #F4CE14;
+  --ll-orange: #EE9972;
+  --ll-light-gray: #EDEFEE;
+  --ll-dark: #333333;
+  --ll-white: #FFFFFF;
+  --ll-disabled-green: #3d4a42;
+} */
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 64pt;
+  margin: 0;
+  padding-top: 30px;
+  text-align: left;
+  margin-left: clamp(16px, 5vw, 70px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button {
+  font-family: "Karla", sans-serif;
+}
+
+h2 {
+  font-size: 40pt;
+  font-family: "Markazi Text";
+  margin-left: 70px;
+}
+
+p {
+  font-size: 16pt;
+  font-family: "Karla", sans-serif;
+  line-height: 1.4;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+h2,
+h3 {
+  font-family: 'Markazi Text', serif;
+}
+
+/* html,
+body {
+  overflow-x: hidden;
+} */
+
+h3 {
+  font-size: 30pt;
+  font-family: "Markazi Text";
+  margin-left: 70px;
+  margin-top: 0;
+}
+
+.little-lemon-menu-card,
+.little-lemon-card,
+.norm-menu-card-inner {
+  cursor: pointer;
+}
+
+.Main-Section {
+  overflow-x: hidden;
+}
+
+
+/* MENU PAGE STYLING */
+.menu-items {
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.menu-items > .menu-specials-header-h2 {
+  padding-top: 70px;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  width: 100vw;
+  margin-top: 70px;
+  padding-top: clamp(32px, 5vw, 48px);
+  padding-right: 16px;
+  padding-bottom: 0;
+  padding-left: 16px;
+  box-sizing: border-box;
+}
+
+.menu-content,
+.menu-specials-section {
+  width: 100vw;
+  background-color: #495E57;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.menu-specials-section {
+  padding-bottom: 70px;
+}
+
+.menu-header {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.menu-header .menu-h1 h1 {
+  margin: 0;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: clamp(16px, 5vw, 70px);
+  color: #F4CE14;
+}
+
+.menu-specials-header-h2-light {
+  color: #EDEFEE;
+  margin-left: 70px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.menu-specials-header-h2 {
+  color: #333333;
+  margin-left: 60px;
+  margin-top: 0;
+}
+
+
+.specials-section .specials-cards .special-card {
+  width: clamp(400px, 50vw, 800px);
+}
+
+/* MENU FAMILY FAVORITES Cards Grid */
+.menu-cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(12px, 2vw, 18px);
+}
+
+/* GENERAL Family Faves card styling */
+.menu-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* Family Faves price AND title styling */
+.little-lemon-menu-card .menu-card-title-price {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  font-size: 22pt;
+}
+
+/* Family Faves title styling */
+.little-lemon-menu-card .menu-card-title {
+  margin: 0;
+  padding: 0;
+  color: #495E57;
+  font-weight: 600;
+  font-size: 22pt;
+  font-family: "Markazi Text", "Karla";
+}
+
+/* Family Faves price styling */
+.little-lemon-menu-card .menu-card-price {
+  margin-right: 10px;
+  color: #EE9972;
+  font-family: "Karla";
+  font-weight: 600;
+}
+
+/* Family faves text styling  */
+.menu-card .item-text {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  /*WebKit implementation (works in Chrome, Edge, Safari) */
+  -webkit-line-clamp: 3;
+  /*Future standard syntax (safe to include, ignored by most browsers)               */
+  line-clamp: 3;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  flex: none;
+  /* prevents flex stretching */
+  line-height: 1.4;
+  margin-bottom: 20px !important;
+  /* override Bootstrap */
+}
+
+/* NORMAL-MENU-ITEMS */
+.normal-menu-items {
+  padding: 40px;
+  background-color: #EDEFEE;
+  width: 100%;
+}
+
+.norm-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Individual Norm Card */
+.norm-card {
+  max-width: 1400px;
+  flex: 0 0 700px;
+  padding: 10px;
+}
+
+/* Norm Card Inner Styling */
+.norm-menu-card-inner {
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform .18s ease, box-shadow .18s ease;
+  background: #FFFFFF;
+  max-height: 200px;
+}
+
+/* Norm Card Content Wrapper */
+.norm-menu-card-content {
+  display: flex;
+  gap: clamp(12px, 2vw, 16px);
+  align-items: stretch;
+  height: 90%;
+  min-height: 200px;
+}
+
+.norm-menu-card-inner.reverse .norm-menu-card-content {
+  flex-direction: row-reverse;
+}
+
+.last-list {
+  margin-bottom: 100px;
+}
+
+.norm-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1450px;
+  width: 100%;
+  margin: 0 auto;
+  /* centers the whole block */
+  padding: 0 70px;
+  /* 70px margin on both sides */
+  width: 100%;
+  /* responsive */
+  box-sizing: border-box;
+  /* ensures padding doesn't break layout */
+}
+
+.menu-item-image {
+  object-fit: cover;
+  max-width: 200px;
+  /* optional: prevents it from getting too wide */
+}
+
+.normal-menu-cards {
+  max-width: 1000px;
+  /* or whatever width you want */
+  margin: 0 auto;
+  /* centers the whole block */
+  padding: 0 70px;
+  /* 70px margin on both sides */
+  width: 100%;
+  /* responsive */
+  box-sizing: border-box;
+  /* ensures padding doesn't break layout */
+  max-height: 400px;
+}
+
+.norm-item-text .card-text {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  /*WebKit implementation (works in Chrome, Edge, Safari) */
+  -webkit-line-clamp: 4;
+  /*Future standard syntax (safe to include, ignored by most browsers)               */
+  line-clamp: 4;
+
+  overflow: scroll;
+  text-overflow: ellipsis;
+
+  flex: none;
+  /* prevents flex stretching */
+  line-height: 1.4;
+  margin-bottom: 25px !important;
+  /* override Bootstrap */
+}
+
+
+/*Menu-Cards Hover Effect*/
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.norm-menu-card-inner:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Norm Menu Card Image Styling */
+.norm-card .norm-menu-card-inner .menu-item-image {
+  width: auto;
+  height: 100%;
+  display: block;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 1;
+}
+
+/* Norm Card Body Styling */
+.norm-menu-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.8vw, 6px);
+  padding: 10px;
+  text-align: left;
+  font-size: 16pt;
+  flex: 1;
+  margin-left: 20px;
+}
+
+/*Dish Name Styling*/
+.dish-name {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.norm-menu-item-price {
+  margin-left: auto;
+  justify-content: flex-end;
+  margin-right: 40px;
+  color: #EE9972;
+  font-size: 22pt;
+  font-family: "Karla";
+  font-weight: 600;
+}
+
+/* Normal Menu Card Title Styling */
+.norm-menu-card-inner .card-title {
+  margin: 0;
+  color: #495E57;
+  font-weight: bold;
+  font-size: 22pt;
+  font-family: "Markazi Text";
+}
+
+.norm-menu-card-inner .card-text {
+  color: #495E57;
+  font-size: 16pt;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+/* .norm-button-container {
+  display: flex;
+  text-align: left;
+  margin: 0;
+  margin-top: clamp(12px, 1vw, 20px);
+  padding: 10px;
+  width: 400px;
+  justify-content: center;
+}
+
+.little-lemon-menu-button {
+  background-color: transparent !important;
+  color: #333333 !important;
+  border: none !important;
+  padding: clamp(8px, 1vw, 10px) clamp(16px, 2vw, 250px) !important;
+  border-radius: 8px !important;
+  font-weight: 400 !important;
+  cursor: pointer !important;
+  transition: background-color .2s ease, font-size .18s ease !important;
+  font-size: 15pt !important;
+  width: 100%;
+} */
+
+/* Testimonials Header */
+.testimonials-header {
+  max-width: 100vw;
+  margin: 0 auto clamp(24px, 4vw, 48px);
+  text-align: left;
+  margin-left: clamp(16px, 5vw, 70px);
+}
+
+/* Testimonials Header Title */
+.testimonials-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 40pt;
+}
+
+/* Testimonials Scroll Container */
+.testimonials-scroll {
+  max-width: 1100px;
+  max-height: auto;
+  margin: 0 auto;
+  display: flex;
+  gap: clamp(16px, 3vw, 24px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-top: 16px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar Styling */
+.testimonials-scroll::-webkit-scrollbar {
+  padding-top: 20px;
+  height: 8px;
+}
+
+/* Track */
+.testimonials-scroll::-webkit-scrollbar-track {
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+/* Handle */
+.testimonials-scroll::-webkit-scrollbar-thumb {
+  background: #495E57;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+.testimonials-scroll::-webkit-scrollbar-thumb:hover {
+  background: #3d4a42;
+}
+
+/* Individual Testimonial Card */
+.testimonial-card {
+  flex: 0 0 700px;
+}
+
+/* Testimonial Card Inner Styling */
+.testimonial-card-inner {
+  background: #ffffff;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(12px, 1.5vw, 16px);
+  height: 100%;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* Testimonial Card Content Wrapper */
+.testimonial-card-content {
+  display: flex;
+  gap: clamp(12px, 2vw, 16px);
+  align-items: flex-start;
+  height: 100%;
+}
+
+/* Testimonial Card Hover Effect */
+.testimonial-card-inner:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+}
+
+/* Testimonial Card Image Styling */
+.testimonial-image {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Testimonial Card Body Styling */
+.testimonial-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.8vw, 6px);
+  padding: 0;
+  text-align: left;
+  font-size: 16pt;
+  flex: 1;
+}
+
+/*Customer Name Styling*/
+.customer-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+/* Testimonial Card Title Styling */
+.testimonial-card-inner .card-title {
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+/* Testimonial Date Styling */
+.testimonial-date {
+  color: #333;
+  font-size: 18pt;
+  font-weight: 600;
+  margin: 0 !important;
+  text-align: left;
+}
+
+/* Testimonial Customer Rating Styling */
+.customer-rating {
+  color: #F4CE14;
+  font-family: "Karla";
+  font-weight: bold;
+  font-size: 16pt;
+  margin: 0 !important;
+  text-align: left;
+}
+
+
+/* Individual Special Card */
+.special-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* BOOTSTRAP CARD COMPONENT*/
+.little-lemon-card {
+  background: #EDEFEE;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: fit-content 100%;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+
+
+
+.little-lemon-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/*Card Hover Effect*/
+.little-lemon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/*Card Body Styling*/
+.little-lemon-menu-card .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1vw, 8px);
+  padding: clamp(12px, 2vw, 16px);
+  flex: 1;
+  font-size: 14pt;
+  color: #495E57;
+}
+
+/*Card Title Styling*/
+.specials-cards .special-card .card-title {
+  font-size: 22pt;
+}
+
+/*Card Price Styling*/
+.specials-cards .special-card .card-price {
+  font-family: "Karla";
+  flex-direction: column;
+  align-items: right;
+  gap: clamp(6px, 1vw, 8px);
+}
+
+
+/* HEADER STYLING */
+.header-logo {
+  height: 55px;
+  width: auto;
+  display: block;
+  margin-right: 50px;
+  margin-left: 60px;
+  flex-shrink: 0;
+}
+
+.site-list {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 30px);
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.site-list a {
+  color: #495E57;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16pt;
+  padding: 18px 12px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.header-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: auto;
+  padding: 10px 16px;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+/* HERO: */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin-top: 70px;
+  background: linear-gradient(180deg, #495e57 0%, #495E57 70%, #FFFFFF 70%, #FFFFFF 90%);;
+  margin-left: calc(-50vw + 50%);
+  padding: clamp(32px, 5vw, 48px) 16px;
+}
+
+/* Headings */
+.hero-content h1 {
+  color: #F4CE14;
+  padding-top: 30px;
+}
+
+.hero-content h2 {
+  color: #ffffff;
+}
+
+.hero-content h1,
+.hero-content h2,
+.table-select-h1,
+.table-select-h2,
+.h2-label {
+  text-align: left;
+  margin: 0;
+  margin-left: clamp(16px, 5vw, 70px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Main hero layout: left column + right image */
+.hero-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Left column: paragraph + button stacked */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 800px;
+  margin-left: 70px;
+}
+
+/* Paragraph inside left column */
+.hero-left .hero-p {
+  margin: 0 0 1rem 0;
+  color: white;
+  font-size: 16pt;
+  text-align: left;
+}
+
+/* Button directly under paragraph */
+.reservation-button {
+  background: #F4CE14;
+  color: #495E57;
+  border: none;
+  padding: 15px 20px !important;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16pt;
+  font-weight: 600;
+  white-space: nowrap;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+/* Right-side image */
+.hero-img {
+  max-width: clamp(150px, 30vw, 250px);
+  height: auto;
+  border-radius: 16px;
+  margin-right: 70px;
+  align-items: flex-start;
+}
+
+
+.site-content {
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 0 16px 64px 16px;
+}
+
+/* SPECIALS */
+.specials-section {
+  padding: clamp(32px, 5vw, 48px) 16px;
+}
+
+.specials-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 2vw, 24px);
+  font-size: 40pt;
+  max-width: 100vw;
+  margin: 0 auto clamp(24px, 4vw, 48px);
+  text-align: left;
+  margin-left: clamp(16px, 5vw, 70px);
+}
+
+.specials-header h2 {
+  display: flex;
+  margin: 0;
+  color: #333;
+  font-size: 40pt;
+}
+
+.menu-button {
+  background: #495E57;
+  color: #fff;
+  border: none;
+  padding: clamp(8px, 1vw, 10px) clamp(16px, 2vw, 20px) !important;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 16pt;
+  margin-right: 70px;
+  justify-content: center;
+  vertical-align: auto;
+}
+
+button:hover:not(.dropdown-toggle) {
+  filter: brightness(.95);
+}
+
+
+
+/* Specials Cards Grid */
+.specials-cards {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(12px, 2vw, 18px);
+}
+
+/* Individual Special Card */
+.special-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* BOOTSTRAP CARD COMPONENT*/
+
+
+/*Card Hover Effect*/
+.little-lemon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/*Card Body Styling*/
+.little-lemon-card .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1vw, 8px);
+  padding: clamp(12px, 2vw, 16px);
+  flex: 1;
+  font-size: 16pt;
+}
+
+/*Card Title Styling*/
+.specials-cards .special-card .card-title {
+  font-size: 22pt;
+}
+
+/*Card Price Styling*/
+.specials-cards .special-card .card-price {
+  /* display: flex; */
+  font-family: "Karla";
+  flex-direction: column;
+  align-items: right;
+  gap: clamp(6px, 1vw, 8px);
+}
+
+/*Card Title AND Card Price shared styling*/
+.card-title,
+.card-price {
+  display: inline-flex;
+  justify-content: center;
+  font-size: 22pt;
+  gap: clamp(6px, 1vw, 8px);
+}
+
+/*Card Title*/
+.little-lemon-card .card-title {
+  margin-right: 20px;
+  color: black;
+  font-weight: 600;
+  font-size: 22pt;
+  font-family: "Markazi Text", "Karla";
+}
+
+/*Card Price*/
+.little-lemon-card .card-price {
+  color: #EE9972;
+  font-family: "Karla";
+  font-weight: bold;
+  margin: 0;
+}
+
+/*Card Text*/
+.little-lemon-card .card-text {
+  color: #495E57;
+  font-size: 16pt;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  /* Number of lines to show */
+  overflow: hidden;
+  line-clamp: 3;
+}
+
+/* Card Button container */
+.card-button-container {
   text-align: center;
+  margin: 0;
+  margin-top: clamp(12px, 1vw, 20px);
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Card Button Styling */
+.little-lemon-button {
+  background-color: #495E57 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: clamp(8px, 1vw, 10px) clamp(16px, 2vw, 20px) !important;
+  border-radius: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background-color .2s ease !important;
+  font-size: clamp(12px, 1.5vw, 16px) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Card Button Hover State*/
+.little-lemon-button:hover {
+  background-color: #3d4a42 !important;
+}
+
+/*Card Button Active State*/
+.little-lemon-button:active {
+  background-color: #334238 !important;
+}
+
+
+/* TESTIMONIALS */
+.customer-rating {
+  color: #f4c430;
+  /* gold */
+  font-size: 1.2rem;
+}
+
+.testimonials-section {
+  padding: 40px;
+  margin-top: 40px;
+  width: 100vw;
+  background: #EDEFEE;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+/* Testimonials Header */
+.testimonials-header {
+  max-width: 100vw;
+  margin: 0 auto clamp(24px, 4vw, 48px);
+  text-align: left;
+  margin-left: clamp(16px, 5vw, 70px);
+}
+
+/* Testimonials Header Title */
+.testimonials-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 40pt;
+}
+
+/* Testimonials Scroll Container */
+.testimonials-scroll {
+  max-width: 1100px;
+  max-height: auto;
+  margin: 0 auto;
+  display: flex;
+  gap: clamp(16px, 3vw, 24px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-top: 16px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar Styling */
+.testimonials-scroll::-webkit-scrollbar {
+  padding-top: 20px;
+  height: 8px;
+}
+
+/* Track */
+.testimonials-scroll::-webkit-scrollbar-track {
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+/* Handle */
+.testimonials-scroll::-webkit-scrollbar-thumb {
+  background: #495E57;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+.testimonials-scroll::-webkit-scrollbar-thumb:hover {
+  background: #3d4a42;
+}
+
+/* Individual Testimonial Card */
+.testimonial-card {
+  flex: 0 0 700px;
+}
+
+/* Testimonial Card Inner Styling */
+.testimonial-card-inner {
+  background: #ffffff;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(12px, 1.5vw, 16px);
+  height: 100%;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* Testimonial Card Content Wrapper */
+.testimonial-card-content {
+  display: flex;
+  gap: clamp(12px, 2vw, 16px);
+  align-items: flex-start;
+  height: 100%;
+}
+
+/* Testimonial Card Hover Effect */
+.testimonial-card-inner:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+}
+
+/* Testimonial Card Image Styling */
+.testimonial-image {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Testimonial Card Body Styling */
+.testimonial-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.8vw, 6px);
+  padding: 0;
+  text-align: left;
+  font-size: 16pt;
+  flex: 1;
+}
+
+/*Customer Name Styling*/
+.customer-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+/* Testimonial Card Title Styling */
+.testimonial-card-inner .card-title {
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+/* Testimonial Date Styling */
+.testimonial-date {
+  color: #333;
+  font-size: 18pt;
+  font-weight: 600;
+  margin: 0 !important;
+  text-align: left;
+}
+
+/* Testimonial Customer Rating Styling */
+.customer-rating {
+  color: #F4CE14;
+  font-family: "Karla";
+  font-weight: bold;
+  font-size: 16pt;
+  margin: 0 !important;
+  text-align: left;
+}
+
+/*Testimonial Card inner Text Styling*/
+.testimonial-card-inner .card-text {
+  color: #495E57;
+  font-size: 16pt;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+  padding: clamp(12px, 1.5vw, 16px);
+}
+
+
+/* ABOUT SECTION */
+.about-section {
+  padding: clamp(32px, 5vw, 48px) 16px;
+  margin-top: 40px;
+  background-color: #495E57;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
+  padding-bottom: 80px;
+}
+
+.about-body .p1 {
+  color: #FFFFFF;
+  margin-left: 70px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(32px, 5vw, 48px) 16px;
+  box-sizing: border-box;
+}
+
+.about-content h2,
+.about-content h1 {
+  margin: 0;
+  margin-left: clamp(16px, 5vw, 70px);
+  color: #F4CE14;
+  font-size: 64pt;
+  padding-top: 30px;
+  text-align: left;
+}
+
+.about-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 24px);
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+/* LEFT SIDE TEXT */
+.about-text p {
+  margin: 0 0 20px 0;
+  text-align: left;
+  flex: 1 1 clamp(250px, 50vw, 500px);
+  color: #ffffff;
+  font-size: 16pt;
+  line-height: 1.6;
+  padding-left: clamp(16px, 5vw, 70px);
+}
+
+/* RIGHT SIDE IMAGES + FOOTNOTE */
+.about-images {
+  width: 450px;
+  padding-right: clamp(16px, 5vw, 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Overlapping images container */
+.about-images-stack {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  /* same as before */
+}
+
+/* Individual images */
+.about-images .elias-image,
+.about-images .shamia-image {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.elias-image {
+  top: 0;
+  left: 130px;
+  z-index: 2;
+}
+
+.shamia-image {
+  top: 120px;
+  left: 0;
+  z-index: 1;
+}
+
+/* FOOTNOTE */
+.about-footnote {
+  margin-top: 12px;
+  font-size: 12pt;
+  font-weight: 400;
+  color: #EDEFEE;
+  max-width: 350px;
+  text-align: left;
+}
+
+
+
+
+
+
+
+/* ABOUT PAGE STYLING */
+.about-page-top .about-page-heading {
+  margin: 0;
+  margin-left: 70px;
+  padding: 0;
+}
+
+.about-page-section {
+  padding: clamp(32px, 5vw, 48px) 16px;
+  margin-top: 40px;
+  background: linear-gradient(135deg, #495e57 0%, #495e57 50%, #F4CE14 100%);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
+  padding-bottom: 80px;
+}
+
+/* This is all of what is in the About.js File */
+.about-page-content {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(32px, 5vw, 48px) 16px;
+  box-sizing: border-box;
+}
+
+.about-page-content h1 {
+  font-size: 64pt;
+  font-family: "Markazi Text";
+  font-weight: 600;
+  margin: 0;
+  padding-top: 30px;
+  margin-left: clamp(16px, 5vw, 70px);
+}
+
+.about-page-top .about-body {
+  gap: 4rem;
+  /* or whatever spacing you want */
+}
+
+.about-page-top .about-body p {
+  margin-bottom: 10px;
+}
+
+.about-mission p,
+.about-vision p {
+  margin-left: 70px;
+  font-weight: 400;
+  padding-bottom: 20px;
+  color: #495E57;
+}
+
+.about-mission:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) ease;
+}
+
+.about-mission,
+.about-vision {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  margin-left: 70px;
+  margin-right: 70px;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 12px;
+}
+
+.about-page-mission-vision {
+  background-color: #EDEFEE;
+  margin: 0;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.about-mission h2,
+.about-vision h2,
+.about-mission p,
+.about-vision p {
+  margin: 0;
+  margin-left: 20px;
+}
+
+.about-page-mission-vision h2 {
+  color: #333333;
+}
+
+
+/* FOOTER*/
+.site-footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 900;
+  width: 100%;
+  max-height: auto;
+  box-sizing: border-box;
+  position: fixed;
+  background-color: #FFFFFF;
+  color: #495E57;
+  font-family: "Karla", sans-serif;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  max-height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 auto;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 140px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 20px;
+
+}
+
+.copyright-text {
+  font-size: 8pt;
+}
+
+.footer-heading {
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #495E57;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Container that will slide open/closed */
+.collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+/* When open, expand */
+.collapsible.open {
+  max-height: 500px;
+  /* just needs to be larger than the content */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doormat-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.doormat-nav-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links a {
+  color: #EDEFEE;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: #334238;
+}
+
+.footer-links i {
+  font-size: 18px;
+  color: #495E57;
+}
+
+.social-links a i {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 40px;
   }
 }
 
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +1435,821 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 600px) {
+  .normal-menu-cards {
+    padding: 0 20px;
+    /* reduce side spacing on phones */
+  }
+
+  .menu-item-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .norm-menu-card-content {
+    flex-direction: column;
+    /* stack image above text */
+  }
+
+  .reservation-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reservation-img {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* RESERVATION FORM STYLING */
+
+
+/* styling for all of the input fields */
+#reservation-phone,
+#reservation-email,
+#reservation-date,
+/* #reservation-time, */
+#guests {
+  width: 100%;
+  border-radius: 16px;
+  font-size: 16px;
+  padding: 10px;
+  font-family: "Karla", sans-serif;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #FFFFFF !important;
+}
+
+.dropdown-input:hover {
+  background-color: #FFFFFF;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #F4CE14 !important;
+  background-color: #FFFFFF;
+}
+
+.input:hover {
+  background-color: #FFFFFF !important;
+  border-color: #334238;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.input:not(:placeholder-shown):not(:focus) {
+  background-color: #EDEFEE;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.input:invalid:not(:focus) {
+  border-color: #CC0000;
+}
+
+
+
+/* BOOKING PAGE STYLING */
+/* Parent container: form left, image right */
+.reservation-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  /* space between form and image */
+  /* top | left+right | bottom */
+  margin: 20px 70px 70px;
+  align-items: center;
+}
+
+.form-field {
+  width: 100%;
+  flex-shrink: 0;
+  /* prevents flexbox from shrinking it */
+}
+
+.booking-page {
+  padding-bottom: 150px;
+  background: linear-gradient(135deg, #495e57 0%, #495e57 50%, #F4CE14 100%);
+  background-blend-mode: multiply;
+}
+
+/* Form stays on the left */
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  width: 508px;
+  margin: 0 70px;
+}
+
+
+/* Form image */
+.reservation-img {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 16px;
+  margin-top: 20px;
+  margin-right: 100px;
+}
+
+
+.reservation-img-container {
+  background-size: cover;
+  background-position: center;
+  background-color: #495E57;
+  background-blend-mode: multiply;
+}
+
+/* Overlay: */
+.booking-page-form {
+  justify-content: center;
+  width: 400px;
+}
+
+.label {
+  color: #495E57;
+  font-size: 18pt;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+.booking-header {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* margin-top: 130px; */
+  margin-left: 70px;
+  padding-top: 50px;
+  color: #F4CE14;
+}
+
+.booking-h2 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 70px;
+  color: #EDEFEE;
+  font-weight: 400;
+  padding-bottom: 30px;
+  margin-top: 6px;
+}
+
+.styled {
+  border-color: #495E57 !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.table-select-headers .table-select-h1 {
+  color: #F4CE14;
+  font-size: 64pt;
+  padding-top: 30px;
+}
+
+.table-select-headers .table-select-h1,
+.table-select-headers .table-select-h2 {
+  margin: 0;
+  margin-left: clamp(16px, 5vw, 70px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Markazi Text", serif;
+}
+
+.table-select-h1 {
+  margin: 0;
+}
+
+.table-select-h1 {
+  margin: 0;
+  padding-top: 30px;
+  margin-left: clamp(16px, 5vw, 70px);
+  color: #F4CE14;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+.booking-h1-and-h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 64pt;
+  margin: 0;
+  padding-top: 30px;
+  text-align: left;
+  margin-top: 70px;
+  background-color: transparent;
+}
+
+.option {
+  font-family: "Karla";
+}
+
+.submit-button-container {
+  margin: 0;
+  padding: 0;
+  margin-top: 40px;
+  width: fit-content;
+}
+
+.submit-button {
+  margin-top: 0;
+  white-space: nowrap;
+  padding: none;
+  border: none;
+  font-size: 16pt;
+  font-weight: bold;
+  padding: 15px 15px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+}
+
+.submit-button:disabled {
+  background-color: #3d4a42;
+  color: #EDEFEE;
+  border: 3px solid #333333;
+  box-shadow: inset;
+}
+
+.submit-button:enabled {
+  border-radius: 16px;
+  background-color: #F4CE14;
+  color: #495E57;
+  cursor: pointer;
+}
+
+select,
+input {
+  border: 3px solid #495E57;
+  cursor: pointer;
+  width: 400px;
+  color: #495E57;
+  font-weight: 600;
+}
+
+select option {
+  background-color: #EDEFEE;
+  color: #495E57;
+  padding: 10px;
+  border-bottom-left-radius: 16px
+}
+
+.field-wrapper {
+  position: relative;
+}
+
+.field-wrapper,
+.dropdown-wrapper,
+.custom-number,
+.input,
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.field-alert {
+  position: absolute;
+  top: 100%;
+  background: #FFEAEA;
+  border: 2px solid #FF746C;
+  color: #CC0000;
+  padding: 10px 12px;
+  border-radius: 16px;
+  font-family: "Karla", sans-serif;
+  font-size: 14pt;
+  font-weight: 600;
+  z-index: 900;
+  pointer-events: none;
+
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.field-alert.fade-out {
+  opacity: 0;
+}
+
+.error-icon {
+  margin-right: 20px;
+}
+
+/* Fullscreen Table Select */
+.table-select-headers {
+  margin-top: 70px;
+}
+
+.table-select-h1 {
+  margin: 0;
+  padding-top: 30px;
+  margin-left: clamp(16px, 5vw, 70px);
+  color: #F4CE14;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.t-select-content {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  width: 100vw;
+  margin-top: 70px;
+  padding-top: clamp(32px, 5vw, 48px);
+  padding-right: 16px;
+  padding-bottom: 40px;
+  padding-left: 16px;
+  box-sizing: border-box;
+}
+
+.map {
+  align-self: center;
+}
+
+.menu-specials-section {
+  width: 100vw;
+  background-color: #495E57;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.menu-page-header .table-select-h2 {
+  font-family: "Markazi Text";
+  color: #EDEFEE;
+}
+
+.table-select-page-fullscreen {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 70vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.room-map-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+  justify-items: center;
+  margin: 0 auto;
+  stroke-width: 8;
+  border-radius: 8;
+  stroke: #C8C4BE;
+  fill: none;
+  padding-bottom: 100px;
+}
+
+.table-select-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%;
+  height: 100%; */
+  overflow: auto;
+}
+
+
+.restaurant-map-fullscreen {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  aspect-ratio: 1000 / 800;
+  padding-bottom: 250px;
+}
+
+.btn-container {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.table-select-overlay {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.location-txt {
+  white-space: nowrap;
+  margin-bottom: 8;
+  font-weight: 700;
+  text-align: center;
+  align-self: center;
+  font-size: 16pt;
+  color: #edefee;
+}
+
+.btn-container-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-back {
+  outline: none;
+  border: none;
+  font-family: "Karla" sans-serif;
+  font-size: 16pt;
+  font-weight: 600;
+  padding: 15px 20px;
+  width: 100%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: filter .12s ease, transform .08s ease;
+  border-radius: 16px;
+  background-color: #495E57;
+  color: #EDEFEE;
+}
+
+.btn-container .btn-continue {
+  background: #F4CE14;
+  color: #495E57;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16pt;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: filter .12s ease, transform .08s ease;
+  margin: 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn-container .btn-continue:hover:not(:disabled) {
+  filter: brightness(.95);
+  transform: translateY(-1px);
+}
+
+.btn-container .btn-continue:disabled {
+  background-color: #334238;
+  color: #EDEFEE;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Table select header styles (match menu h1 + h2 light) */
+.table-select-page {
+  background: linear-gradient(135deg, #495e57 0%, #495e57 50%, #F4CE14 100%);
+  overflow-x: hidden;
+}
+
+.table-select-headers {
+  margin-top: 70px;
+  padding: clamp(32px, 5vw, 48px) 16px;
+  box-sizing: border-box;
+}
+
+.table-select-headers .table-select-h1,
+.table-select-headers .table-select-h2 {
+  margin: 0;
+  margin-left: clamp(16px, 5vw, 70px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Markazi Text", serif;
+}
+
+.table-select-h1 {
+  margin: 0;
+}
+
+.table-select-h2 {
+  margin: 6px 0 0;
+  font-weight: 400;
+}
+
+.selection-options {
+  display: flex;
+  gap: 12px;
+  padding: 20px 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color: #EDEFEE;
+  margin-top: 30px;
+  /* border-radius: 400px; */
+}
+
+.selection-options button {
+  border-radius: 16px;
+  font-size: 12pt;
+}
+
+/* styles the first button in the selection-options button */
+.selection-options button:nth-of-type(1) {
+  padding: 18px;
+  margin-left: 70px;
+  border-radius: 16px;
+}
+
+.showing-loc-text {
+  margin-left: auto;
+  margin-right: 70px;
+  align-self: center;
+  font-weight: 600;
+}
+
+.table-select-headers .table-select-h1 {
+  color: #F4CE14;
+  font-size: 64pt;
+  padding-top: 30px;
+}
+
+.table-select-headers .table-select-h2 {
+  color: #EDEFEE;
+  font-size: 40pt;
+  font-weight: 400;
+  margin-top: 6px;
+}
+
+.floor-transition {
+  transition: opacity 300ms ease, transform 300ms ease;
+  margin: 0 auto;
+}
+
+.room {
+  margin-bottom: 80px;
+}
+
+.floor-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.floor-visible {
+  opacity: 1;
+  transform: translateY(0);
+  margin-bottom: 70px;
+}
+
+
+/* INFORMATIONDETAILSFORM.JS STYLING */
+.animated-field {
+  transition: opacity 0.5s ease, height 0.25s ease;
+  overflow: hidden;
+}
+
+.animated-field.hidden {
+  opacity: 30%;
+  pointer-events: none;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin: 8px 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16pt;
+  color: #333333;
+}
+
+/* hide the native radio */
+.radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.same-width-btn {
+  flex: 1;
+  min-width: 250px;
+}
+
+.category-button,
+.btn-secondary,
+.btn-primary,
+.checkout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.category-button {
+  background: #edefee;
+  color: #333333;
+  border-color: transparent;
+  text-transform: capitalize;
+}
+
+.category-button:hover,
+.btn-secondary:hover,
+.btn-primary:hover,
+.checkout-btn:hover {
+  transform: translateY(-1px);
+}
+
+.category-button:hover {
+  background: #f4ce14;
+  color: #333333;
+  border-color: #495e57;
+}
+
+.category-button.active {
+  background: #495e57;
+  color: #ffffff;
+  border-color: #495e57;
+}
+
+.btn-secondary {
+  background: #edefee;
+  color: #495e57;
+  border-color: #495e57;
+}
+
+.btn-secondary:hover {
+  background: #495e57;
+  color: white;
+}
+
+.btn-secondary:active,
+.category-button:active,
+.btn-primary:active,
+.checkout-btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary,
+.checkout-btn {
+  background: #f4ce14;
+  color: #333333;
+}
+
+.btn-primary:hover,
+.checkout-btn:hover {
+  background: #ee9972;
+  color: white;
+}
+
+.btn-primary:disabled,
+.checkout-btn:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* custom circle */
+.custom-radio {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #495E57;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.custom-radio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #495E57;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.radio-option input[type="radio"]:checked + .custom-radio::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-option-with-field {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label-info-details {
+  color: #333333;
+  font-size: 18pt;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+.radio-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.communication-label {
+  display: block;
+  width: 100vw;
+  /* full screen width */
+  font-size: 16pt;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 12px;
+  margin-top: 50px;
+}
+
+.name-label {
+  display: block;
+  width: 100vw;
+  /* full screen width */
+  font-size: 16pt;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 12px;
+  margin-left: -70px;
+  font-family: "Marakazi Text", sans-serif;
+}
+
+.h2-label {
+  padding: 0;
+  margin: 0;
+  margin-left: 70px;
+}
+
+.h2-label.name {
+  display: block;
+}
+
+.label-info-details.communication-label .h2-label {
+  margin: 0;
+  padding: 0;
+}
+
+.booking-page-info-details {
+  overflow: hidden;
+  min-height: 100vh;
+  margin-top: 70px;
+  margin-left: calc(-50vw + 50%);
+  padding: clamp(36px, 5vw, 48px) 16px 60px;
+  background: linear-gradient(135deg, #495e57 0%, #495e57 50%, #F4CE14 100%);
+}
+
+.reservation-form-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  flex: 1 1;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  padding: 32px;
+}
+
+#reservation-first,
+#reservation-last {
+  max-width: 100vw;
+  min-width: 70vw;
+  border-radius: 16px;
+  font-size: 16px;
+  padding: 10px;
+  font-family: "Karla", sans-serif;
+}
+
+/* INFORMATIONDETAILSPAGE.JS STYLING */
+.info-details-h1 {
+  color: #F4CE14;
+  margin-left: clamp(16px, 5vw, 70px);
+  padding-top: 30px;
 }

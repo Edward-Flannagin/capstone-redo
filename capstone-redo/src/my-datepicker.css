@@ -1,0 +1,75 @@
+/* Style the input field */
+.date-picker {
+  width: 450px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Style the popup calendar */
+.react-datepicker {
+  border-radius: 16px !important;
+  border: 2px solid #333333;
+  overflow: hidden;
+  font-family: 'Karla', sans-serif;
+  height: auto;
+  transform: scale(1.5);
+  transform-origin: top left;
+}
+
+.react-datepicker-wrapper {
+  width: 450px;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+/* Header (month + arrows) */
+.react-datepicker__header {
+  background-color: #495E57 !important;
+  color: #EDEFEE !important;
+  padding-top: 10px;
+}
+
+
+.react-datepicker__current-month {
+  color: #EDEFEE;
+}
+
+/* Days of the week */
+.react-datepicker__day-name {
+  color: #333333;
+  font-weight: 600;
+}
+
+/* Individual days */
+.react-datepicker__day {
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.react-datepicker__month-container {
+  color: #EDEFEE !important;
+}
+
+/* Hover effect */
+.react-datepicker__day:hover {
+  background-color: #EE9972 !important;
+  color: #333333;
+}
+
+/* Selected day */
+.react-datepicker__day--selected {
+  background-color: #495E57;
+  color: white;
+}
+
+/* Today highlight */
+.react-datepicker__day--today {
+  background-color: #F4CE14;
+  color: #333333;
+  border-radius: 8px;
+}

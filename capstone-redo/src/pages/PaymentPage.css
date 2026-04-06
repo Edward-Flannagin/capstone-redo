@@ -1,0 +1,428 @@
+/* Payment Page Container and Header */
+.payment-page-container {
+  background: linear-gradient(135deg, #495e57 0%, #495e57 50%, #F4CE14 100%);
+  min-height: 100vh;
+  padding: 40px 70px;
+}
+
+.payment-header {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  margin-top: 70px;
+  color: #fff;
+}
+
+.payment-title {
+  font-family: "Markazi Text", serif;
+  font-size: 64pt;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #F4CE14;
+}
+
+.payment-subtitle {
+  font-family: "Karla", sans-serif;
+  font-size: 20pt;
+  font-weight: 400;
+  color: #edefee;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Main Content */
+.payment-content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+}
+
+.payment-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 70px;
+}
+
+.payment-section-title {
+  font-family: "Markazi Text", serif;
+  font-size: 28px;
+  color: #495e57;
+  margin: 0 0 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f4ce14;
+}
+
+/* Payment Method Selection */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.payment-method-option {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 2px solid #edefee;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.payment-method-option:hover {
+  border-color: #f4ce14;
+  background: #fefdf8;
+}
+
+.payment-method-option.selected {
+  border-color: #495e57;
+  background: #f9f9f9;
+}
+
+.payment-method-radio {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  cursor: pointer;
+  accent-color: #495e57;
+}
+
+.payment-method-label {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  cursor: pointer;
+  flex: 1;
+}
+
+/* Form Fields */
+
+/* Billing Address Section */
+.billing-address-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.billing-address-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: #fefdf8;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.billing-address-checkbox input {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  cursor: pointer;
+  accent-color: #495e57;
+}
+
+.billing-address-checkbox label {
+  margin: 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333333;
+}
+
+.billing-fields {
+  display: none;
+  animation: slideDown 0.3s ease;
+}
+
+.billing-fields.show {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Order Summary Sidebar */
+.order-summary-sidebar {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.order-summary-title {
+  font-family: "Markazi Text", serif;
+  font-size: 24px;
+  color: #495e57;
+  margin: 0 0 20px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f4ce14;
+}
+
+.order-summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: "Karla", sans-serif;
+  font-size: 13px;
+  color: #333333;
+}
+
+.order-summary-item-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.order-summary-item-price {
+  color: #f4ce14;
+  font-weight: 700;
+  text-align: right;
+}
+
+.order-summary-item-qty {
+  font-size: 12px;
+  color: #999;
+  margin: 0 10px;
+}
+
+.order-summary-empty {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+}
+
+.order-summary-totals {
+  margin-top: 15px;
+  padding: 15px 0;
+  border-top: 2px solid #495e57;
+  border-bottom: 2px solid #495e57;
+}
+
+.order-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  color: #333333;
+}
+
+.order-summary-row:last-child {
+  margin-bottom: 0;
+}
+
+.order-summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  font-family: "Markazi Text", serif;
+  font-size: 24px;
+  color: #495e57;
+  font-weight: 700;
+}
+
+.order-summary-total-amount {
+  color: #f4ce14;
+  font-size: 28px;
+}
+
+/* Action Buttons */
+.payment-button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f0f0f0;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-secondary,
+.btn-primary {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 6px;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex: 1;
+}
+
+.btn-secondary {
+  background: #edefee;
+  color: #495e57;
+  border: 2px solid #495e57;
+}
+
+.btn-secondary:hover {
+  background: #495e57;
+  color: white;
+  transform: scale(1.02);
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: #f4ce14;
+  color: #333333;
+}
+
+.btn-primary:hover {
+  background: #ee9972;
+  color: white;
+  transform: scale(1.02);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading and Success States */
+.loading-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  border: 2px solid #f4ce14;
+  border-top-color: #495e57;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet - 1024px and below */
+@media (max-width: 1024px) {
+  .payment-page-container {
+    padding: 30px 40px;
+  }
+
+  .payment-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary-sidebar {
+    position: static;
+    top: auto;
+  }
+}
+
+/* Mobile Tablet - 768px and below */
+@media (max-width: 768px) {
+  .payment-page-container {
+    padding: 20px 15px;
+  }
+
+  .payment-header {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  .payment-title {
+    font-size: 44px;
+  }
+
+  .payment-subtitle {
+    font-size: 16px;
+  }
+
+  .payment-section {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row .form-group {
+    margin-bottom: 20px;
+  }
+
+  .payment-button-group {
+    flex-direction: column;
+  }
+
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+/* Small Mobile - 480px and below */
+@media (max-width: 480px) {
+  .payment-page-container {
+    padding: 15px 10px;
+  }
+
+  .payment-title {
+    font-size: 36px;
+  }
+
+  .payment-subtitle {
+    font-size: 14px;
+  }
+
+  .payment-section-title {
+    font-size: 22px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .order-summary-sidebar {
+    margin-top: 20px;
+  }
+
+  .order-summary-title {
+    font-size: 20px;
+  }
+
+  .btn-secondary,
+  .btn-primary {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+}

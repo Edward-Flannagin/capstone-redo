@@ -1,0 +1,315 @@
+label {
+    font-size: 16pt;
+    font-weight: 600;
+}
+
+/* ------------------------------
+   OVERLAY BACKDROP + PANEL
+------------------------------ */
+.overlay-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.overlay-panel {
+    background: #FFFFFF;
+    width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    font-family: "Karla", sans-serif;
+}
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+.overlay-header h2 {
+    font-family: "Markazi Text", serif;
+    font-size: 40pt;
+    margin: 0;
+    margin-bottom: 1rem;
+    color: #495E57;
+    text-align: center;
+}
+
+/* ------------------------------
+   SECTION BLOCKS
+------------------------------ */
+
+.section-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #EDEFEE;
+    margin: 0 auto;
+}
+
+.section-block h3 {
+    margin: 0;
+    margin-top: 30px;
+    color: #333333;
+    font-weight: 700;
+}
+
+/* ------------------------------
+   FIELD LAYOUT
+------------------------------ */
+
+.field-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.field-row.full-width {
+    flex-wrap: nowrap;
+}
+
+.field-row.full-width .field-group {
+    width: 100%;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 400px;
+}
+
+.field-group label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #495E57;
+}
+
+.dropdown-wrapper {
+    margin: 0;
+}
+
+/* ------------------------------
+   ORDER ITEMS LIST
+------------------------------ */
+
+.order-items-list {
+    background: #F5F7F6;
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #E0E3E2;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item-name {
+    flex: 1;
+    font-weight: 500;
+    color: #333333;
+}
+
+.order-item-qty {
+    color: #666666;
+    font-size: 0.95rem;
+    margin: 0 1rem;
+}
+
+.order-item-price {
+    font-weight: 600;
+    color: #495E57;
+    min-width: 70px;
+    text-align: right;
+}
+
+/* ------------------------------
+   ORDER TOTALS
+------------------------------ */
+
+.order-totals {
+    background: #F5F7F6;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+}
+
+.order-total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+.order-total-row.total {
+    border-top: 2px solid #495E57;
+    padding-top: 0.8rem;
+    margin-top: 0.8rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #495E57;
+}
+
+/* ------------------------------
+   INPUTS & DROPDOWNS
+------------------------------ */
+
+.editable-input {
+    padding: 0.6rem 0.75rem;
+    border: 2px solid #495E57;
+    border-radius: 16px;
+    font-size: 1rem;
+    background: #FFFFFF;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editable-input:focus {
+    outline: none;
+    border-color: #495E57;
+    box-shadow: 0 0 0 3px rgba(73, 94, 87, 0.2);
+}
+
+.editable-input:hover {
+    border-color: #334238;
+}
+
+/* ------------------------------
+   ACTION BUTTONS
+------------------------------ */
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.confirm-btn,
+.cancel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+}
+
+.confirm-btn {
+    background: #f4ce14;
+    color: #333333;
+}
+
+.confirm-btn:hover {
+    background: #ee9972;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.confirm-btn:active {
+    transform: scale(0.98);
+}
+
+.cancel-btn {
+    background: #edefee;
+    color: #495e57;
+    border-color: #495e57;
+}
+
+.cancel-btn:hover {
+    background: #495e57;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.cancel-btn:active {
+    transform: scale(0.98);
+}
+
+/* ------------------------------
+   CONFIRMATION POPUP
+------------------------------ */
+
+.edit-confirm-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.edit-confirm-panel {
+    background: #FFFFFF;
+    padding: 2rem;
+    width: 350px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.edit-confirm-panel h3 {
+    margin: 0;
+    font-family: "Markazi Text", serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #495E57;
+}
+
+.edit-confirm-panel p {
+    margin-bottom: 1.5rem;
+    color: #333333;
+}
+
+.edit-confirm-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ------------------------------
+   ALERT
+------------------------------ */
+
+.fading-alert {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #F4CE14;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    color: #333333;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.editable-input,
+.editable-input::placeholder {
+    font-family: "Karla", sans-serif;
+}

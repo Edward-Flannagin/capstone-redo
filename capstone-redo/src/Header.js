@@ -1,12 +1,15 @@
+import { Link } from "react-router-dom";
+
 const Navigation = () => {
     return (
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/menu">Menu</a></li>
-                <li><a href="/reservations">Reservations</a></li>
-                <li><a href="/order-online">Order Online</a></li>
-                <li><a href="/login">Login</a></li>
+        <nav className="nav-container">
+            <ul className="site-list">
+                <li> <Link to="/"> Home </Link> </li>
+                <li> <Link to="/menu"> Menu</Link> </li>
+                <li> <Link to="/reservations"> Reservations</Link> </li>
+                <li> <Link to="/order-online">Order Online</Link> </li>
+                <li> <Link to="/login"> Login </Link> </li>
+                <li> <Link to="/about"> About Us</Link></li>
             </ul>
         </nav>
     );
@@ -14,9 +17,9 @@ const Navigation = () => {
 
 function Header () {
     return (
-        <header>
-            <img src="./little lemon logo.jpg" alt="logo" />
-            <Navigation />
+        <header className="header-top">
+            <img src="./little lemon logo.jpg" alt="logo" className="header-logo"/>
+            <Navigation className="Header-navigation"/>
         </header>
     );
 }

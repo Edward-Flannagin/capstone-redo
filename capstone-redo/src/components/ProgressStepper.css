@@ -1,0 +1,199 @@
+:root {
+    --ll-lemon: #FECE14;
+    --ll-lemon-strong: #F4CE14;
+    --ll-active: #EE9972;
+    --ll-neutral: #EDEFF0;
+    --ll-text-on-lemon: #333333;
+    --ll-green: #495e57;
+    --ll-disabled-green: #3d4a42;
+    --ll-step-font: 14pt; /* base for step labels and circle text */
+    --ll-step-gap: 8px;
+    --ll-circle-scale: 2.4; /* multiplier for em -> circle size */
+    --progress-line-track: #edefee; /* default track color */
+    --progress-line-fill: #F4CE14; /* default fill color */
+    --progress-label-color: var(--ll-lemon, #FECE14);
+}
+
+/* Container */
+.progress-stepper {
+    width: 100%;
+    padding: 12px 8px;
+    box-sizing: border-box;
+    font-family: "Karla", sans-serif;
+    font-size: var(--ll-step-font);
+}
+
+/* progress line */
+.progress-line {
+    position: relative;
+    height: 4px;
+    background: var(--progress-line-track, #EDEFEE);
+    border-radius: 2px;
+    margin: 8px 0 12px 0;
+    overflow: hidden;
+}
+
+.progress-line-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--progress-line-fill, #F4CE14);/* default fallback */
+    width: 0%;
+    transition: width 300ms ease, background 180ms ease;
+}
+
+/* label text */
+.progress-step-label {
+    margin-top: 8px;
+    font-size: 1rem; /* 14pt via root token */
+    color: var(--progress-label-color, var(--ll-lemon, #f4ce14));
+    white-space: normal;
+    overflow: visible;
+}
+
+/* helper classes you can toggle on the stepper container */
+.progress-stepper.on-dark {
+    --progress-line-fill: #f4ce14;
+    --progress-label-color: #f4ce14;
+    --progress-line-track: #edefee;
+}
+
+.progress-stepper.on-light {
+    --progress-line-fill: var(--ll-green);
+    --progress-label-color: var(--ll-green);
+    --progress-line-track: var(--ll-green);
+}
+
+/* steps row */
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: var(--ll-step-gap);
+}
+
+/* each step */
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* button wrapper */
+.progress-step-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* circle scales with font-size using em units */
+.progress-step-circle {
+    font-size: 1rem;/* 1rem == var(--ll-step-font) from .progress-stepper */
+    width: calc(var(--ll-circle-scale) * 1em);
+    height: calc(var(--ll-circle-scale) * 1em);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ll-neutral);
+    color: var(--ll-neutral);
+    font-weight: 600;
+    transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) inset;
+    user-select: none;
+}
+
+/* completed state */
+.progress-step.completed .progress-step-circle {
+    background: var(--ll-lemon);
+    color: var(--ll-text-on-lemon);
+    font-weight: 900;
+}
+
+/* active state */
+.progress-step.active .progress-step-circle {
+    background: var(--ll-lemon);
+    color: var(--ll-text-on-lemon);
+    outline: 2px solid var(--ll-lemon-strong);
+    outline-offset: 2px;
+    font-weight: 600;
+    transform: scale(1.08);
+    box-shadow: none;
+}
+
+.progress-step-button:focus, .progress-step-button:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+/* focus styles for keyboard users */
+.progress-step-button:focus-visible .progress-step-circle {
+    outline: 2px solid var(--ll-lemon-strong);
+    outline-offset: 3px;
+    box-shadow: none;
+}
+
+
+/* disabled/unclickable */
+.progress-step-button[disabled] {
+    cursor: default;
+    opacity: 0.6;
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .progress-line-fill,
+    .progress-step-circle {
+        transition: none;
+    }
+}
+
+/* responsive adjustments */
+@media (max-width: 640px) {
+    .progress-step-label {
+        font-size: 12px;
+        max-width: 70px;
+        color: var(--ll-lemon);
+    }
+
+    .progress-step-circle {
+        font-size: 12px;
+        width: calc(2.0 * 1em);
+        height: calc(2.0 * 1em);
+    }
+}
+
+.top-component-wrapper {
+    margin-top: 8px;
+}
+
+.h2-label + .top-component-wrapper .progress-stepper,
+.h2-label + .progress-stepper {
+    margin-top: 8px;
+}
+
+/* ensure stepper uses Little Lemon tokens already defined */
+.progress-step-label {
+    color: var(--ll-lemon);
+    font-size: 14pt;
+    font-weight: 900;
+}
+
+.progress-step-circle {
+    font-size: 14pt;
+    width: 2.4em;
+    height: 2.4em;
+}
+
+/* ProgressStepper.css (excerpt) */
