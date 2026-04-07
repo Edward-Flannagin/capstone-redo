@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Confetti from "react-confetti";
 import { useWindowSize } from "@react-hook/window-size";
@@ -7,31 +7,14 @@ import PropTypes from "prop-types";
 
 const FullScreenSuccessOverlay = ({ imageSrc, message, onDone }) => {
     const [width, height] = useWindowSize();
-    const [progress, setProgress] = useState(80);
     const navigate = useNavigate();
 
     useEffect(() => {
-        const duration = 20000; // 20 seconds
-        const interval = 50; // update every 50 milliseconds
-        const step = (100 / (duration / interval));
-
-        const timer = setInterval(() => {
-            setProgress(prev => {
-                if (prev <= 0) {
-                    clearInterval(timer);
-                    return 0;
-                }
-                return prev - step;
-            });
-        }, interval)
-        return () => clearInterval(timer);
-    }, []);
-
-    useEffect(() => {
-        if (progress === 0) {
+        const timer = setTimeout(() => {
             onDone && onDone();
-        }
-    }, [progress, onDone]);
+        }, 20000);
+        return () => clearTimeout(timer);
+    }, [onDone]);
 
     const handleSubmit = () => {
         navigate("/")
@@ -57,7 +40,7 @@ const FullScreenSuccessOverlay = ({ imageSrc, message, onDone }) => {
             </div>
 
             <div className="success-timer-bar">
-                <div className="success-timer-progress" style={{ width: `${progress}%` }} />
+                <div className="success-timer-progress" />
             </div>
         </div>
     )

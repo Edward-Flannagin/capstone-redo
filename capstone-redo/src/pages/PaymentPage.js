@@ -210,13 +210,7 @@ function PaymentPage() {
 
           {/* Payment Method Selection */}
           <div>
-            <h3 style={{ 
-              fontFamily: "'Karla', sans-serif", 
-              fontSize: "16px", 
-              fontWeight: "600",
-              color: "#333333",
-              marginBottom: "15px"
-            }}>
+            <h3 className="payment-section-heading">
               Select Payment Method
             </h3>
             <div className="payment-methods">
@@ -258,14 +252,8 @@ function PaymentPage() {
           </div>
 
           {/* Shipping Address */}
-          <div style={{ marginTop: "30px", paddingTop: "30px", borderTop: "2px solid #f0f0f0" }}>
-            <h3 style={{ 
-              fontFamily: "'Karla', sans-serif", 
-              fontSize: "16px", 
-              fontWeight: "600",
-              color: "#333333",
-              marginBottom: "15px"
-            }}>
+          <div className="payment-section-divider">
+            <h3 className="payment-section-heading">
               Shipping Address
             </h3>
             <div className="form-row">
@@ -460,14 +448,8 @@ function PaymentPage() {
 
           {/* Payment Details */}
           {(paymentMethod === "creditCard" || paymentMethod === "debitCard") && (
-            <div style={{ marginTop: "30px", paddingTop: "30px", borderTop: "2px solid #f0f0f0" }}>
-              <h3 style={{ 
-                fontFamily: "'Karla', sans-serif", 
-                fontSize: "16px", 
-                fontWeight: "600",
-                color: "#333333",
-                marginBottom: "15px"
-              }}>
+            <div className="payment-section-divider">
+              <h3 className="payment-section-heading">
                 {paymentMethod === "creditCard" ? "Credit Card" : "Debit Card"} Details
               </h3>
 
@@ -527,14 +509,8 @@ function PaymentPage() {
 
           {/* PayPal Details */}
           {paymentMethod === "paypal" && (
-            <div style={{ marginTop: "30px", paddingTop: "30px", borderTop: "2px solid #f0f0f0" }}>
-              <h3 style={{ 
-                fontFamily: "'Karla', sans-serif", 
-                fontSize: "16px", 
-                fontWeight: "600",
-                color: "#333333",
-                marginBottom: "15px"
-              }}>
+            <div className="payment-section-divider">
+              <h3 className="payment-section-heading">
                 PayPal Details
               </h3>
 

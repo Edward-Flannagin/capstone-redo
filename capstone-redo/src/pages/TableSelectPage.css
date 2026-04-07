@@ -1,0 +1,27 @@
+.table-select-page-fullscreen {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.table-select-container {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-select-headers .menu-page-header {
+  margin-bottom: 8px;
+}
+
+.blurred-ellipse {
+  filter: blur(4px);
+}
+
+.blurred-rect {
+  filter: blur(6px);
+}

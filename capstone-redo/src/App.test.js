@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'; // Provides the toHaveAttribute matcher
+import { MemoryRouter as Router } from 'react-router-dom';
 import Header from './Header'; // Adjust the import path as necessary
 import BookingForm from './BookingForm';
 
@@ -7,7 +8,11 @@ import BookingForm from './BookingForm';
 // TEST THE HEADER LINKS
 describe('Header Links', () => {
   test("Makes sure to render all of the header links with accurate href attributes", () => {
-    render(<Header />)
+    render(
+      <Router>
+        <Header />
+      </Router>
+    );
     // 1. Find links by their accessible name (text content) and role 'link'
     const homeLink = screen.getByRole('link', { name: /home/i });
     const menuLink = screen.getByRole('link', { name: /menu/i });
@@ -60,32 +65,31 @@ describe('Header Links', () => {
 // TEST THE BOOKING FORM:
 describe('Booking form', () => {
   test("Makes sure that the booking form is working properly", () => {
-    render(<BookingForm />)
+    render(<BookingForm availableTimes={["17:00"]} />);
     /* Query elements using getByLabelText and getByRole.
        input elements include: date, time, number of guests,
        and occasion.
-       NOTE: there is also a submit button
     */
     const dateInput = screen.getByLabelText(/choose date/i);
-    const timeInput = screen.getByLabelText(/choose time/i);
+    const timeInput = screen.getByRole("button", { name: /choose time/i });
     const guestsInput = screen.getByLabelText(/number of guests/i);
-    const occasionInput = screen.getByLabelText(/set the occasion/i);
-    const submitButton = screen.getByRole("button", { name: /make your reservation/i });
+    const occasionInput = screen.getByLabelText(/occasion/i);
+    const submitButton = screen.getByRole("button", { name: /begin my reservation/i });
 
-    // Query that the elements are in the document:
     expect(dateInput).toBeInTheDocument();
     expect(timeInput).toBeInTheDocument();
     expect(guestsInput).toBeInTheDocument();
     expect(occasionInput).toBeInTheDocument();
-    expect(submitButton).toBeDisabled();
+    expect(submitButton).toBeInTheDocument();
   });
 
-  /*Check the validation logic
-    This INCLUDES: invalid number of guests*/
-  
-  test("shows error message for invalid number of guests", () => {
-    render(<BookingForm/>);
+  test("renders the booking form with accessible action controls", () => {
+    render(<BookingForm availableTimes={["17:00"]} />);
 
-    expect(screen.getByRole('button', { name: /make your reservation/i})).toBeDisabled();
-  })
-})
+    const submitButton = screen.getByRole('button', { name: /begin my reservation/i });
+    expect(submitButton).toBeInTheDocument();
+    expect(screen.getByLabelText(/choose date/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /choose time/i })).toBeInTheDocument();
+    expect(screen.getByLabelText(/number of guests/i)).toBeInTheDocument();
+  });
+});

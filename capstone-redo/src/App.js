@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ReservationContext } from "./context/ReservationContext";
+import { CartProvider } from "./context/CartContext";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -33,20 +34,22 @@ function App() {
 
   return (
     <ReservationContext.Provider value={{ reservationData, setReservationData }}>
-      <BrowserRouter>
-        <Header />
+      <CartProvider>
+        <BrowserRouter>
+          <Header />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/order-online" element={<OrderOnline />} />
-          <Route path="/reservations" element={<ReservationWizard />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/payment" element={<PaymentPage />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/order-online" element={<OrderOnline />} />
+            <Route path="/reservations" element={<ReservationWizard />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/payment" element={<PaymentPage />} />
+          </Routes>
 
-        <Footer />
-      </BrowserRouter>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
     </ReservationContext.Provider>
   );
 }

@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { navigate, useNavigate } from "react-router-dom";
 import Card from "react-bootstrap/Card";
+import { CartContext } from "../context/CartContext";
 import "./OrderOnline.css";
 
 
 
 const OrderOnline = () => {
-  const [cart, setCart] = useState([]);
+  const { cart, addToCart, removeFromCart, updateQuantity } = useContext(CartContext);
   const [selectedCategory, setSelectedCategory] = useState("appetizers");
   const [showDeliveryOptions, setShowDeliveryOptions] = useState(false);
   const [deliveryType, setDeliveryType] = useState("");
@@ -177,35 +178,6 @@ const OrderOnline = () => {
         price: "$8.99",
       },
     ],
-  };
-
-  const addToCart = (item) => {
-    const existingItem = cart.find((c) => c.id === item.id);
-    if (existingItem) {
-      setCart(
-        cart.map((c) =>
-          c.id === item.id ? { ...c, quantity: c.quantity + 1 } : c
-        )
-      );
-    } else {
-      setCart([...cart, { ...item, quantity: 1 }]);
-    }
-  };
-
-  const removeFromCart = (itemId) => {
-    setCart(cart.filter((item) => item.id !== itemId));
-  };
-
-  const updateQuantity = (itemId, quantity) => {
-    if (quantity <= 0) {
-      removeFromCart(itemId);
-    } else {
-      setCart(
-        cart.map((item) =>
-          item.id === itemId ? { ...item, quantity } : item
-        )
-      );
-    }
   };
 
   const getCartTotal = () => {

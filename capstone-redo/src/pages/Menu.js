@@ -10,6 +10,7 @@ function Menu() {
     const menuItemsAppetizers = [
         // Whipped Feta
         {
+            id: 1,
             imgSrc: "/whipped feta.jpg",
             imgAlt: "Whipped Feta",
             title: "Whipped Feta",
@@ -18,6 +19,7 @@ function Menu() {
         },
         // Hummus and pita
         {
+            id: 2,
             imgSrc: "/hummus & pita.jpg",
             imgAlt: "Hummas and Pita",
             title: "Hummus and Pita",
@@ -26,6 +28,7 @@ function Menu() {
         },
         // Bruschetta al Pomodoro
         {
+            id: 3,
             imgSrc: "/bruschetta reg.jpg",
             imgAlt: "Bruschetta al Pomodoro",
             title: "Bruschetta al Pomodoro",
@@ -34,6 +37,7 @@ function Menu() {
         },
         // Greek Salad
         {
+            id: 4,
             imgSrc: "/greek salad hidef.jpg",
             imgAlt: "Greek Salad",
             title: "Greek Salad",
@@ -49,6 +53,7 @@ function Menu() {
     const menuItemsMain = [
         // Seafood Paella
         {
+            id: 5,
             imgSrc: "/Seafood Paella.jpg",
             imgAlt: "Seafood Paella",
             title: "Seafood Paella",
@@ -57,6 +62,7 @@ function Menu() {
         },
         // Chicken Shawarma Rice Bowl
         {
+            id: 6,
             imgSrc: "/chicken Shawarma Rice Bowl.jpg",
             imgAlt: "Chicken Shawarma Rice Bowl",
             title: "Chicken Shawarma Rice Bowl",
@@ -65,6 +71,7 @@ function Menu() {
         },
         // Moussaka
         {
+            id: 7,
             imgSrc: "/Moussaka.jpg",
             imgAlt: "Moussaka",
             title: "Moussaka",
@@ -73,6 +80,7 @@ function Menu() {
         },
         // Gyros
         {
+            id: 8,
             imgSrc: "/gyros.jpg",
             imgAlt: "Gyros",
             title: "Gyros",
@@ -81,6 +89,7 @@ function Menu() {
         },
         // Grilled Fish
         {
+            id: 9,
             imgSrc: "/grilled fish reg.jpg",
             imgAlt: "Grilled Fish",
             title: "Grilled Fish",
@@ -89,6 +98,7 @@ function Menu() {
         },
         //Lamb Slouvaki
         {
+            id: 10,
             imgSrc: "/lamb Souvlaki.jpg",
             imgAlt: "Lamb Slouvaki",
             title: "Lamb Slouvaki",
@@ -97,6 +107,7 @@ function Menu() {
         },
         // Shakshuka
         {
+            id: 11,
             imgSrc: "/Shakshuka.jpg",
             imgAlt: "Shakshuka",
             title: "Shakshuka",
@@ -112,6 +123,7 @@ function Menu() {
     const menuItemsDesserts = [
         // Tiramisu
         {
+            id: 14,
             imgSrc: "/Tiramisu.jpg",
             imgAlt: "Tiramisu",
             title: "Tiramisu",
@@ -120,6 +132,7 @@ function Menu() {
         },
         // Turkish Delight (Lokum)
         {
+            id: 13,
             imgSrc: "/Turkish Delight.jpg",
             imgAlt: "Turkish Delight (Lokum)",
             title: "Turkish Delight (Lokum)",
@@ -128,6 +141,7 @@ function Menu() {
         },
         // Rice Pudding (Arroz con Leche)
         {
+            id: 15,
             imgSrc: "/Rice Pudding.jpg",
             imgAlt: "Rice Pudding (Arroz con Leche)",
             title: "Rice Pudding (Arroz con Leche)",
@@ -136,6 +150,7 @@ function Menu() {
         },
         // Churros
         {
+            id: 16,
             imgSrc: "/churros.jpg",
             imgAlt: "Churros",
             title: "Churros",
@@ -144,14 +159,16 @@ function Menu() {
         },
         // Basbousa (Semolina Cake)
         {
-            imgSrc: "/churros.jpg",
-            imgAlt: "Churros",
-            title: "Churros",
-            text: "Crisp, golden-fried pastry dough is rolled immediately in a generous cinnamon-sugar mixture, served warm and ready for dipping into a rich, decadent chocolate or dulce de leche sauce for a perfect sweet treat.",
+            id: 17,
+            imgSrc: "/Basbousa.jpg",
+            imgAlt: "Basbousa (Semolina Cake)",
+            title: "Basbousa (Semolina Cake)",
+            text: "A traditional Middle Eastern dessert made with semolina, soaked in sweet syrup, and often flavored with rosewater or orange blossom water.",
             price: "$12.55",
         },
         // Baklava
         {
+            id: 12,
             imgSrc: "/Baklava.jpg",
             imgAlt: "Baklava",
             title: "Backlava",
@@ -175,21 +192,24 @@ function Menu() {
                 <h2 className="menu-specials-header-h2-light">This week's specials:</h2>
                 <article className='specials-cards'>
                     <div className='special-card'>
-                        <MyCard imgSrc="/greek salad hidef.jpg"
+                        <MyCard id={4}
+                            imgSrc="/greek salad hidef.jpg"
                             imgAlt="Greek Salad"
                             title="Greek Salad"
                             text="The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
                             price="$12.99" />
                     </div>
                     <div className="special-card">
-                        <MyCard imgSrc="/bruschetta hidef.jpg"
+                        <MyCard id={3}
+                            imgSrc="/bruschetta hidef.jpg"
                             imgAlt="Bruschetta"
-                            title="Bruschetta"
+                            title="Bruschetta al Pomodoro"
                             text="Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil."
                             price="$5.99" />
                     </div>
                     <div className="special-card">
-                        <MyCard imgSrc="/grilled fish hidef.jpg"
+                        <MyCard id={9}
+                            imgSrc="/grilled fish hidef.jpg"
                             imgAlt="Grilled Fish"
                             title="Grilled Fish"
                             text="This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined."
@@ -203,7 +223,8 @@ function Menu() {
                 <h2 className="menu-specials-header-h2">Our family's personal favorites:</h2>
                 <div className="menu-cards">
                     <div className="menu-card">
-                        <MenuCard imgSrc="/pasta.jpg"
+                        <MenuCard id={17}
+                            imgSrc="/pasta.jpg"
                             imgAlt="pasta"
                             title="Pasta"
                             text="This recipe comes straight from our home in the Mediterranean. It's sauce is a traditional tomato sauce with garlic, oregano, and thyme. With our own home-grown herbs and spices!"
@@ -211,7 +232,8 @@ function Menu() {
                         />
                     </div>
                     <div className="menu-card">
-                        <MenuCard imgSrc="/bagel sandwich.jpg"
+                        <MenuCard id={18}
+                            imgSrc="/bagel sandwich.jpg"
                             imgAlt="bagel sandwich"
                             title="Bagel Sandwich"
                             text="It's simplicity is its virtue, with its crunchy bagel, fresh tomato, fresh spinach, and delishous cream cheese, this is quite possibly the best breakfast food."
@@ -219,16 +241,17 @@ function Menu() {
                         />
                     </div>
                     <div className="menu-card">
-                        <MenuCard imgSrc="/lamb Souvlaki.jpg"
+                        <MenuCard id={10}
+                            imgSrc="/lamb Souvlaki.jpg"
                             imgAlt="Grilled Lamb Kabobs"
                             title="Lamb Kabobs"
                             text="Succulent, lemon-garlic marinated boneless lamb leg cubes are grilled over an open flame with bell peppers and onions until juicy and tender, served with creamy tzatziki sauce and warm pita bread."
-                            // text="Succulent cubes of boneless leg of lamb, marinated in a fragrant blend of lemon, garlic, and Mediterranean herbs, then grilled over an open flame with bell peppers and onions until juicy and tender. Served with a side of creamy tzatziki sauce and warm pita bread."
                             price="$18.95"
                         />
                     </div>
                     <div className="menu-card">
-                        <MenuCard imgSrc="/gyros.jpg"
+                        <MenuCard id={8}
+                            imgSrc="/gyros.jpg"
                             imgAlt="Gyros"
                             title="Gyros"
                             text="Savory, herb-infused beef and lamb slices are carved fresh
@@ -239,7 +262,8 @@ function Menu() {
                         />
                     </div>
                     <div className="menu-card">
-                        <MenuCard imgSrc="/Shakshuka.jpg"
+                        <MenuCard id={11}
+                            imgSrc="/Shakshuka.jpg"
                             imgAlt="Shakshuka"
                             title="Shakshuka"
                             text="Spicy, slow-simmered tomatoes, bell peppers, and onions 
@@ -251,7 +275,8 @@ function Menu() {
                         />
                     </div>
                     <div className="menu-card">
-                        <MenuCard imgSrc="/Moussaka.jpg"
+                        <MenuCard id={7}
+                            imgSrc="/Moussaka.jpg"
                             imgAlt="Moussaka"
                             title="Moussaka"
                             text="A decadent layering of rich, spiced ground beef and lamb

@@ -43,6 +43,14 @@
     transition: width 300ms ease, background 180ms ease;
 }
 
+.progress-line-fill.progress-fill-0 { width: 0%; }
+.progress-line-fill.progress-fill-25 { width: 25%; }
+.progress-line-fill.progress-fill-33 { width: 33%; }
+.progress-line-fill.progress-fill-50 { width: 50%; }
+.progress-line-fill.progress-fill-67 { width: 67%; }
+.progress-line-fill.progress-fill-75 { width: 75%; }
+.progress-line-fill.progress-fill-100 { width: 100%; }
+
 /* label text */
 .progress-step-label {
     margin-top: 8px;

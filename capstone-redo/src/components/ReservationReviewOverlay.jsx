@@ -335,7 +335,7 @@ const ReservationReviewOverlay = ({ data = {}, onCancel, onConfirm }) => {
                         <div className="field-row">
 
                             <EditableField label="Table Number and Location:">
-                                <div className="table-selected" style={{ paddingTop: "0.6rem" }}>
+                                <div className="table-selected">
                                     You currently have the table numbered <strong> {table.tableNumber} </strong> selected at <strong> {table.location} </strong>
                                 </div>
                             </EditableField>

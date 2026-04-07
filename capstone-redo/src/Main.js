@@ -42,22 +42,25 @@ function Main() {
                 </div>
 
                 <article className='specials-cards'>
-                    <div className='card'>
-                        <MyCard imgSrc="/greek salad hidef.jpg"
+                    <div className='special-card'>
+                        <MyCard id={4}
+                            imgSrc="/greek salad hidef.jpg"
                             imgAlt="Greek Salad"
                             title="Greek Salad"
                             text="The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
                             price="$12.99" />
                     </div>
                     <div className="special-card">
-                        <MyCard imgSrc="/bruschetta hidef.jpg"
+                        <MyCard id={3}
+                            imgSrc="/bruschetta hidef.jpg"
                             imgAlt="Bruschetta"
-                            title="Bruschetta"
+                            title="Bruschetta al Pomodoro"
                             text="Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil."
                             price="$5.99" />
                     </div>
                     <div className="special-card">
-                        <MyCard imgSrc="/grilled fish hidef.jpg"
+                        <MyCard id={9}
+                            imgSrc="/grilled fish hidef.jpg"
                             imgAlt="Grilled Fish"
                             title="Grilled Fish"
                             text="This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined."

@@ -82,6 +82,11 @@ export default function BookingForm({
         onNext?.(patch);
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        handleContinue();
+    };
+
     const handleSaveDraft = async () => {
         const patch = {
             date: date ? new Date(date).toISOString() : null,
@@ -105,7 +110,7 @@ export default function BookingForm({
 
     return (
         <div className="reservation-container">
-            <form className="reservation-form" noValidate>
+            <form className="reservation-form" onSubmit={handleSubmit} noValidate>
                 <div className="form-field">
                     {/* DATE INPUT */}
                     <label htmlFor="reservation-date" className="label">Choose Date: </label>
@@ -118,9 +123,11 @@ export default function BookingForm({
                             onBlur={() => setDateTouched(true)}
                             popperPlacement="bottom-start"
                             placeholderText="Select a Date"
+                            aria-invalid={!!errors.date}
+                            aria-describedby={errors.date ? "error-date" : undefined}
                         />
                         {errors.date && (
-                            <div className="error-message">
+                            <div className="error-message" id="error-date" role="alert" aria-live="polite">
                                 ✗ {errors.date}
                             </div>
                         )}
@@ -137,6 +144,8 @@ export default function BookingForm({
                             value={time}
                             onChange={(t) => setTime(t)}
                             onBlur={() => setTimeTouched(true)}
+                            aria-invalid={!!errors.time}
+                            aria-describedby={errors.time ? "error-time" : undefined}
                             options={(availableTimes || []).map(t => ({
                                 value: t,
                                 label:
@@ -147,7 +156,7 @@ export default function BookingForm({
                             }))}
                         />
                         {errors.time && (
-                            <div className="error-message">
+                            <div className="error-message" id="error-time" role="alert" aria-live="polite">
                                 ✗ {errors.time}
                             </div>
                         )}
@@ -168,9 +177,11 @@ export default function BookingForm({
                             className={`input ${guestTouched && guests ? "selected-date" : ""} ${errors.guests ? "error" : ""}`}
                             onChange={(e) => setGuests(Number(e.target.value))}
                             onBlur={() => setGuestTouched(true)}
+                            aria-invalid={!!errors.guests}
+                            aria-describedby={errors.guests ? "error-guests" : undefined}
                         />
                         {errors.guests && (
-                            <div className="error-message">
+                            <div className="error-message" id="error-guests" role="alert" aria-live="polite">
                                 ✗ {errors.guests}
                             </div>
                         )}
@@ -179,7 +190,7 @@ export default function BookingForm({
 
                 <div className="form-field">
                     {/* OCCASION */}
-                    <label htmlFor="occasion" className="label">Occasion: </label>
+                    <label id="occasion-label" className="label">Occasion: </label>
                     <CustomDropdown
                         id="occasion"
                         value={occasion}
@@ -202,11 +213,9 @@ export default function BookingForm({
                                 Back
                             </button>
 
-                            {/* Continue button: disabled when saving or when form invalid */}
                             <button
-                                type="button"
+                                type="submit"
                                 className="category-button same-width-btn"
-                                onClick={handleContinue}
                             >
                                 {isSaving ? "Saving…" : "Begin my Reservation"}
                             </button>
