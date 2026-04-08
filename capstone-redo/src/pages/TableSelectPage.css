@@ -25,3 +25,73 @@
 .blurred-rect {
   filter: blur(6px);
 }
+
+@media (max-width: 900px) {
+  .table-select-page .selection-options {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    width: calc(100% - 32px);
+    margin: 30px auto 0;
+    background-color: #EDEFEE;
+    border-radius: 24px;
+  }
+
+  .table-select-page .selection-options button {
+    flex: 1 1 calc(33.333% - 12px);
+    max-width: 220px;
+    width: 100%;
+    padding: 16px 18px;
+    min-width: 0;
+  }
+
+  .table-select-page .selection-options button:nth-of-type(1) {
+    margin-left: 0;
+  }
+
+  .table-select-page .showing-loc-text {
+    order: 999;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 14pt;
+    padding-top: 10px;
+  }
+
+  .table-select-page .btn-container {
+    position: static;
+    left: auto;
+    transform: none;
+    width: 100%;
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  .table-select-page .btn-container .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .table-select-page .location-txt {
+    margin-left: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .table-select-page .category-button.same-width-btn {
+    max-width: none;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .table-select-page .selection-options button {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}
