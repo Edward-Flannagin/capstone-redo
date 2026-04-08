@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { navigate, useNavigate } from "react-router-dom";
+import React, { useState, useContext, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import { CartContext } from "../context/CartContext";
 import "./OrderOnline.css";
@@ -13,7 +13,19 @@ const OrderOnline = () => {
   const [deliveryType, setDeliveryType] = useState("");
   const [deliveryAddress, setDeliveryAddress] = useState("");
   const [vehicleInfo, setVehicleInfo] = useState("");
+  const [shakeCount, setShakeCount] = useState(false);
   const navigate = useNavigate();
+  const cartCount = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+  const prevCartCount = useRef(cartCount);
+
+  useEffect(() => {
+    if (cartCount > prevCartCount.current) {
+      setShakeCount(true);
+      const timer = setTimeout(() => setShakeCount(false), 500);
+      return () => clearTimeout(timer);
+    }
+    prevCartCount.current = cartCount;
+  }, [cartCount]);
 
   const menuItems = {
     appetizers: [
@@ -302,7 +314,19 @@ const OrderOnline = () => {
 
         {/* SIDEBAR - Shopping Cart */}
         <div className="shopping-cart-sidebar">
-          <h3 className="cart-title">Shopping Cart</h3>
+          <div className="cart-title-row">
+            <h3 className="cart-title">
+              <i className="bi bi-cart-fill cart-title-icon">
+                {cartCount > 0 && (
+                  <span className={`cart-badge cart-badge-small ${shakeCount ? "shake" : ""}`}>
+                    {cartCount}
+                  </span>
+                )}
+              </i>
+              Shopping Cart
+            </h3>
+
+          </div>
           {cart.length === 0 ? (
             <p className="cart-empty">Your cart is empty</p>
           ) : (
@@ -349,8 +373,8 @@ const OrderOnline = () => {
                   <span>Total:</span>
                   <span className="total-amount">${getFinalTotal()}</span>
                 </div>
-                <button 
-                  className="checkout-btn" 
+                <button
+                  className="checkout-btn"
                   onClick={handleContinue}
                   disabled={cart.length === 0}
                   style={{
@@ -447,7 +471,7 @@ const OrderOnline = () => {
       )}
     </div>
 
-      );
+  );
 };
 
-      export default OrderOnline;
+export default OrderOnline;

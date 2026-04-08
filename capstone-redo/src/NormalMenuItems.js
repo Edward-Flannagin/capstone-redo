@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from './context/CartContext';
 
-function NormalMenuItems({ id, imgSrc, imgAlt, title, text, price, reverse }) {
+function NormalMenuItems({ id, imgSrc, imgAlt, title, text, price, reverse, showOrderButton = true }) {
     const { addToCart } = useContext(CartContext);
     const navigate = useNavigate();
 
@@ -40,9 +40,11 @@ function NormalMenuItems({ id, imgSrc, imgAlt, title, text, price, reverse }) {
                     <Card.Text className='norm-item-text'>
                         {text}
                     </Card.Text>
-                    <div className='norm-button-container'>
-                        <Button className='little-lemon-button' variant='primary' onClick={handleOrderClick}>Order a Delivery</Button>
-                    </div>
+                    {showOrderButton && (
+                        <div className='norm-button-container'>
+                            <Button className='little-lemon-button' variant='primary' onClick={handleOrderClick}>Order a Delivery</Button>
+                        </div>
+                    )}
                 </Card.Body>
 
             </div>

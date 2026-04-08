@@ -102,6 +102,8 @@ const InformationDetailsForm = ({
                     <input
                         type="text"
                         id="reservation-first"
+                        required
+                        aria-required="true"
                         value={firstName}
                         className={`input ${firstNameStyle.className} ${errors.firstName ? "error" : ""}`}
                         placeholder="First Name"
@@ -123,6 +125,8 @@ const InformationDetailsForm = ({
                     <input
                         type="text"
                         id="reservation-last"
+                        required
+                        aria-required="true"
                         value={lastName}
                         className={`input ${lastNameStyle.className} ${errors.lastName ? "error" : ""}`}
                         placeholder="Last Name"
@@ -165,6 +169,8 @@ const InformationDetailsForm = ({
                                 <input
                                     type="email"
                                     id="reservation-email"
+                                    required
+                                    aria-required="true"
                                     value={email}
                                     className={`input ${emailStyle.className} ${errors.email ? "error" : ""}`}
                                     placeholder="your_email@example.com"
@@ -202,6 +208,8 @@ const InformationDetailsForm = ({
                                 <input
                                     type="tel"
                                     id="reservation-phone"
+                                    required
+                                    aria-required="true"
                                     value={phoneNumber}
                                     className={`input ${phoneStyle.className} ${errors.phoneNumber ? "error" : ""}`}
                                     placeholder="(123)-123-4567"

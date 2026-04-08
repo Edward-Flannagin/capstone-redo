@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom'; // Provides the toHaveAttribute matcher
 import { MemoryRouter as Router } from 'react-router-dom';
 import Header from './Header'; // Adjust the import path as necessary
 import BookingForm from './BookingForm';
+import InformationDetailsForm from './pages/InformationDetailsForm';
+import PaymentPage from './pages/PaymentPage';
+import { CartProvider } from './context/CartContext';
 
 
 // TEST THE HEADER LINKS
@@ -10,7 +14,9 @@ describe('Header Links', () => {
   test("Makes sure to render all of the header links with accurate href attributes", () => {
     render(
       <Router>
-        <Header />
+        <CartProvider>
+          <Header />
+        </CartProvider>
       </Router>
     );
     // 1. Find links by their accessible name (text content) and role 'link'
@@ -91,5 +97,66 @@ describe('Booking form', () => {
     expect(screen.getByLabelText(/choose date/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /choose time/i })).toBeInTheDocument();
     expect(screen.getByLabelText(/number of guests/i)).toBeInTheDocument();
+  });
+});
+
+describe('InformationDetailsForm validation', () => {
+  test('shows validation errors when required fields are missing', async () => {
+    const user = userEvent;
+
+    render(<InformationDetailsForm onOpenReview={jest.fn()} />);
+    const continueButton = screen.getByRole('button', { name: /review reservation/i });
+
+    await user.click(continueButton);
+
+    expect(await screen.findByText(/please enter your first name/i)).toBeInTheDocument();
+    expect(screen.getByText(/please enter your last name/i)).toBeInTheDocument();
+    expect(screen.getByText(/please enter your email/i)).toBeInTheDocument();
+  });
+
+  test('shows phone validation when phone contact method is selected', async () => {
+    const user = userEvent;
+
+    render(<InformationDetailsForm onOpenReview={jest.fn()} />);
+    await user.click(screen.getByRole('radio', { name: /phone/i }));
+    await user.click(screen.getByRole('button', { name: /review reservation/i }));
+
+    expect(await screen.findByText(/please enter your phone number/i)).toBeInTheDocument();
+  });
+});
+
+describe('PaymentPage validation', () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  test('validates payment selection and required shipping fields', async () => {
+    const user = userEvent;
+    const cartItems = [{ id: '1', title: 'Greek Salad', price: '$12.00', quantity: 1 }];
+    localStorage.setItem('orderCart', JSON.stringify(cartItems));
+
+    render(
+      <Router>
+        <PaymentPage />
+      </Router>
+    );
+
+    const completeButton = screen.getByRole('button', { name: /complete order/i });
+    await user.click(completeButton);
+
+    expect(await screen.findByText(/please select a payment method/i)).toBeInTheDocument();
+
+    await user.click(screen.getByLabelText(/credit card/i));
+    await user.type(screen.getByPlaceholderText(/^John$/i), 'John');
+    await user.type(screen.getByPlaceholderText(/^Doe$/i), 'Doe');
+    await user.type(screen.getByPlaceholderText(/john@example.com/i), 'john@example.com');
+    await user.type(screen.getByPlaceholderText(/\(555\) 123-4567/i), '5551234567');
+    await user.type(screen.getByPlaceholderText(/123 main street/i), '123 Main Street');
+    await user.type(screen.getByPlaceholderText(/chicago/i), 'Chicago');
+    await user.type(screen.getByPlaceholderText(/il/i), 'IL');
+    await user.type(screen.getByPlaceholderText(/60601/i), '60601');
+
+    await user.click(completeButton);
+    expect(await screen.findByText(/cardholder name is required/i)).toBeInTheDocument();
   });
 });

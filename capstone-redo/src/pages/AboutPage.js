@@ -70,6 +70,7 @@ function AboutPage() {
                             title="Elias Petrakis - Head Chef"
                             text="Elias is our head chef with over 20 years of experience in Mediterranean cuisine. His passion for fresh ingredients and bold flavors is evident in every dish he creates."
                             price=""
+                            showOrderButton={false}
                         />
                     </div>
                     <div className='norm-menu-list'>
@@ -79,6 +80,7 @@ function AboutPage() {
                             title="Maria Petrakis - Hospitality Manager"
                             text="Maria ensures that every guest feels at home at Little Lemon. With her warm hospitality and attention to detail, she makes dining with us a memorable experience."
                             price=""
+                            showOrderButton={false}
                         />
                     </div>
                     <div className='norm-menu-list'>
@@ -88,6 +90,7 @@ function AboutPage() {
                             title="Sofia Petrakis - Pastry Chef"
                             text="Sofia brings a sweet touch to our menu with her delectable Mediterranean desserts. Her creations are the perfect ending to any meal."
                             price=""
+                            showOrderButton={false}
                         />
                     </div>
                     <div className='norm-menu-list'>
@@ -97,6 +100,7 @@ function AboutPage() {
                             title="Niko Petrakis - Restaurant Manager"
                             text="Niko oversees the daily operations of Little Lemon. His leadership and dedication ensure that every aspect of our restaurant runs smoothly."
                             price=""
+                            showOrderButton={false}
                         />
                     </div>
                 </article>

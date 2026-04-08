@@ -219,6 +219,8 @@ function PaymentPage() {
                   type="radio"
                   name="paymentMethod"
                   value="creditCard"
+                  required
+                  aria-required="true"
                   checked={paymentMethod === "creditCard"}
                   onChange={() => handlePaymentMethodChange("creditCard")}
                   className="payment-method-radio"
@@ -230,6 +232,8 @@ function PaymentPage() {
                   type="radio"
                   name="paymentMethod"
                   value="debitCard"
+                  required
+                  aria-required="true"
                   checked={paymentMethod === "debitCard"}
                   onChange={() => handlePaymentMethodChange("debitCard")}
                   className="payment-method-radio"
@@ -241,6 +245,8 @@ function PaymentPage() {
                   type="radio"
                   name="paymentMethod"
                   value="paypal"
+                  required
+                  aria-required="true"
                   checked={paymentMethod === "paypal"}
                   onChange={() => handlePaymentMethodChange("paypal")}
                   className="payment-method-radio"
@@ -262,6 +268,8 @@ function PaymentPage() {
                 <input
                   type="text"
                   name="firstName"
+                  required
+                  aria-required="true"
                   value={formData.firstName}
                   onChange={handleInputChange}
                   placeholder="John"
@@ -273,6 +281,8 @@ function PaymentPage() {
                 <input
                   type="text"
                   name="lastName"
+                  required
+                  aria-required="true"
                   value={formData.lastName}
                   onChange={handleInputChange}
                   placeholder="Doe"
@@ -287,6 +297,8 @@ function PaymentPage() {
                 <input
                   type="email"
                   name="email"
+                  required
+                  aria-required="true"
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="john@example.com"
@@ -298,6 +310,8 @@ function PaymentPage() {
                 <input
                   type="tel"
                   name="phone"
+                  required
+                  aria-required="true"
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder="(555) 123-4567"
@@ -311,6 +325,8 @@ function PaymentPage() {
               <input
                 type="text"
                 name="address"
+                required
+                aria-required="true"
                 value={formData.address}
                 onChange={handleInputChange}
                 placeholder="123 Main Street"
@@ -324,6 +340,8 @@ function PaymentPage() {
                 <input
                   type="text"
                   name="city"
+                  required
+                  aria-required="true"
                   value={formData.city}
                   onChange={handleInputChange}
                   placeholder="Chicago"
@@ -335,6 +353,8 @@ function PaymentPage() {
                 <input
                   type="text"
                   name="state"
+                  required
+                  aria-required="true"
                   value={formData.state}
                   onChange={handleInputChange}
                   placeholder="IL"
@@ -347,6 +367,8 @@ function PaymentPage() {
                 <input
                   type="text"
                   name="zipCode"
+                  required
+                  aria-required="true"
                   value={formData.zipCode}
                   onChange={handleInputChange}
                   placeholder="60601"
@@ -458,6 +480,8 @@ function PaymentPage() {
                 <input
                   type="text"
                   name="cardholderName"
+                  required
+                  aria-required="true"
                   value={formData.cardholderName}
                   onChange={handleInputChange}
                   placeholder="John Doe"
@@ -470,6 +494,8 @@ function PaymentPage() {
                 <input
                   type="text"
                   name="cardNumber"
+                  required
+                  aria-required="true"
                   value={formData.cardNumber}
                   onChange={handleInputChange}
                   placeholder="1234 5678 9012 3456"
@@ -484,6 +510,8 @@ function PaymentPage() {
                   <input
                     type="text"
                     name="expirationDate"
+                    required
+                    aria-required="true"
                     value={formData.expirationDate}
                     onChange={handleInputChange}
                     placeholder="MM/YY"
@@ -496,6 +524,8 @@ function PaymentPage() {
                   <input
                     type="text"
                     name="cvv"
+                    required
+                    aria-required="true"
                     value={formData.cvv}
                     onChange={handleInputChange}
                     placeholder="123"
@@ -519,6 +549,8 @@ function PaymentPage() {
                 <input
                   type="email"
                   name="paypalEmail"
+                  required
+                  aria-required="true"
                   value={formData.paypalEmail}
                   onChange={handleInputChange}
                   placeholder="your@paypal.com"

@@ -1,8 +1,11 @@
 /* Payment Page Container and Header */
 .payment-page-container {
   background: linear-gradient(135deg, #495e57 0%, #495e57 50%, #F4CE14 100%);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   min-height: 100vh;
-  padding: 40px 70px;
+  padding: 40px clamp(16px, 4vw, 70px);
+  box-sizing: border-box;
 }
 
 .payment-header {

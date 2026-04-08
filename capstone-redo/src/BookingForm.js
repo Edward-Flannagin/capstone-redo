@@ -173,6 +173,8 @@ export default function BookingForm({
                             min="1"
                             max="10"
                             id="guests"
+                            required
+                            aria-required="true"
                             value={guests}
                             className={`input ${guestTouched && guests ? "selected-date" : ""} ${errors.guests ? "error" : ""}`}
                             onChange={(e) => setGuests(Number(e.target.value))}

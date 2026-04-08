@@ -1,8 +1,12 @@
 /* OrderOnline Container and Header */
 .order-online-container {
   background: linear-gradient(135deg, #495e57 0%, #495e57 50%, #F4CE14 100%);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   min-height: 100vh;
-  padding: 40px 70px;
+  padding: 40px clamp(16px, 4vw, 70px);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .order-online-header {
@@ -229,8 +233,49 @@
   text-align: center;
   padding-bottom: 15px;
   border-bottom: 2px solid #f4ce14;
+  width: 100%;
+}
+.cart-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
+.cart-title-icon {
+  margin-right: 8px;
+  font-size: 16pt;
+  vertical-align: middle;
+  color: #495e57;
+}
+
+.cart-badge-small {
+  height: 24px;
+  width: 24px;
+  border-radius: 999px;
+  background: #f4ce14;
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 0 2px 0 0;
+}
+
+.cart-badge-small.shake {
+  animation: cart-badge-shake 0.45s ease;
+}
+
+@keyframes cart-badge-shake {
+  0% { transform: translateX(0); }
+  15% { transform: translateX(-2px); }
+  30% { transform: translateX(2px); }
+  45% { transform: translateX(-2px); }
+  60% { transform: translateX(2px); }
+  75% { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
 .cart-empty {
   font-family: "Karla", sans-serif;
   font-size: 14px;

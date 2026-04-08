@@ -3,13 +3,30 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   const [open, setOpen] = useState(null);
+  const [footerOpen, setFooterOpen] = useState(false);
 
   const toggle = (section) => {
     setOpen(open === section ? null : section);
   };
 
+  const toggleFooter = () => {
+    setFooterOpen((current) => !current);
+  };
+
   return (
-    <footer className="site-footer">
+    <footer className={`site-footer ${footerOpen ? "open" : ""}`}>
+      <div className="footer-mobile-header">
+        <button
+          type="button"
+          className={`footer-mobile-toggle ${footerOpen ? "open" : ""}`}
+          onClick={toggleFooter}
+          aria-expanded={footerOpen}
+          aria-label="Toggle footer menu"
+        >
+          <i className="bi bi-list"></i>
+          <span>Footer menu</span>
+        </button>
+      </div>
       <div className="footer-inner">
 
         <div className="footer-column">
