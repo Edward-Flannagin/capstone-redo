@@ -8,8 +8,8 @@ export const TABLE_PADDING = 31;
 export const SEAT_DISTANCE = 4;
 
 export const ROOM_MARGIN = 40;
-export const ROOM_WIDTH = 1360;
-export const ROOM_HEIGHT = 1000;
+export const ROOM_WIDTH = 1500;
+export const ROOM_HEIGHT = 1200;
 export const GLOBAL_CENTER_X = 680;
 export const GLOBAL_CENTER_Y = 500;
 

@@ -16,6 +16,10 @@
   --ll-disabled-green: #3d4a42;
 } */
 
+body {
+  outline: 2px solid red;
+}
+
 html, body, #root {
   width: 100%;
   min-width: 100%;
@@ -672,7 +676,6 @@ h3 {
   font-size: 16pt;
   padding: 18px 12px;
   display: inline-block;
-  white-space: nowrap;
 }
 
 .header-top {
@@ -1788,6 +1791,12 @@ button:hover:not(.dropdown-toggle) {
     gap: 24px;
   }
 
+  .reservation-wizard {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
   .reservation-form {
     width: 100%;
     padding: 0 12px;
@@ -1835,6 +1844,10 @@ button:hover:not(.dropdown-toggle) {
     right: auto;
     transform: translateX(-50%);
     top: calc(100% + 10px);
+  }
+
+  .h2-label{
+    white-space: wrap;
   }
 }
 
@@ -1918,14 +1931,16 @@ button:hover:not(.dropdown-toggle) {
 /* Parent container: form left, image right */
 .reservation-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: clamp(24px, 4vw, 80px);
   /* space between form and image */
   /* top | left+right | bottom */
-  margin: 20px clamp(16px, 4vw, 70px) 70px;
+  margin: 0;
   align-items: flex-start;
   flex-wrap: wrap;
+  width: 100%;
 }
+
 
 .form-field {
   width: 100%;
@@ -1940,6 +1955,10 @@ button:hover:not(.dropdown-toggle) {
   width: 100%;
 }
 
+.reservation-wizard {
+  justify-content: center;
+}
+
 .reservation-form .dropdown-toggle,
 .reservation-form-info .dropdown-toggle,
 .reservation-form .input,
@@ -1948,7 +1967,7 @@ button:hover:not(.dropdown-toggle) {
 }
 
 .booking-page {
-  width: 100vw;
+  background-size: cover;
   margin-left: calc(-50vw + 50%);
   padding-bottom: 150px;
   background: linear-gradient(135deg, #495e57 0%, #495e57 50%, #F4CE14 100%);
@@ -2005,7 +2024,6 @@ button:hover:not(.dropdown-toggle) {
   display: flex;
   flex-direction: column;
   text-align: left;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   /* margin-top: 130px; */
@@ -2020,7 +2038,7 @@ button:hover:not(.dropdown-toggle) {
   display: flex;
   flex-direction: column;
   text-align: left;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
   margin-left: 70px;
@@ -2055,18 +2073,16 @@ button:hover:not(.dropdown-toggle) {
 
 .table-select-h1 {
   margin: 0;
-}
-
-.table-select-h1 {
-  margin: 0;
   padding-top: 30px;
   margin-left: clamp(16px, 5vw, 70px);
   color: #F4CE14;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+.label-info-details {
+  white-space: normal;
+}
 
 
 .booking-h1-and-h2 {
@@ -2280,13 +2296,19 @@ select option {
 }
 
 .location-txt {
-  white-space: nowrap;
-  margin-bottom: 8;
+  white-space: wrap;
+  margin-bottom: 8px;
   font-weight: 700;
   text-align: center;
   align-self: center;
   font-size: 16pt;
   color: #edefee;
+}
+
+@media (max-width: 780px) {
+  .location-txt {
+    text-align: left;
+  }
 }
 
 .btn-container-inner {
@@ -2378,7 +2400,21 @@ select option {
   margin-left: calc(-50vw + 50%);
   background-color: #EDEFEE;
   margin-top: 30px;
-  /* border-radius: 400px; */
+  overflow-x: auto;
+}
+
+.selection-options > .category-button {
+  white-space: nowrap;
+}
+
+.selection-options > .category-button:active {
+  background-color: #F4CE14;
+  color: #333333;
+  border-color: #495e57;
+}
+
+.selection-options > .showing-loc-text {
+  min-width: 150px;
 }
 
 .selection-options button {
@@ -2467,13 +2503,44 @@ select option {
   pointer-events: none;
 }
 
+
+.continue-back {
+  background: #edefee;
+  color: #333333;
+  border: 2px solid transparent;
+  padding: 12px 15px;
+  border-radius: 16px;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.continue-back:hover {
+  background: #f4ce14;
+  color: #333333;
+  border-color: #495e57;
+  transform: translate(5px);
+}
+
+.continue-back:active {
+  background: #495E57;
+  color: white;
+  border-color: #495E57;
+  transform: translate(5px) scale(0.98);
+}
+
 .same-width-btn {
   flex: 1;
-  min-width: 250px;
+  min-width: 100px;
+  width: clamp(100px, 30%, 200px);
 }
 
 .category-button,
 .btn-secondary,
+.continue-back,s
 .btn-primary,
 .checkout-btn {
   display: inline-flex;
@@ -2507,16 +2574,18 @@ select option {
   transform: translateY(-1px);
 }
 
-.category-button:hover {
-  background: #f4ce14;
-  color: #333333;
-  border-color: #495e57;
-}
-
-.category-button.active {
+.category-button:active {
   background: #495e57;
   color: #ffffff;
   border-color: #495e57;
+}
+
+.category-button:disabled {
+  background-color: #3d4a42;
+  color: #EDEFEE;
+  cursor: not-allowed;
+  border-color: transparent;
+  pointer-events: none;
 }
 
 .btn-secondary {
@@ -2588,6 +2657,7 @@ select option {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 
 .label-info-details {
@@ -2601,6 +2671,7 @@ select option {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
+  white-space: wrap;
 }
 
 .communication-label {
@@ -2631,6 +2702,7 @@ select option {
   padding: 0;
   margin: 0;
   margin-left: 70px;
+  white-space: wrap;
 }
 
 .h2-label.name {
@@ -2652,11 +2724,11 @@ select option {
 }
 
 .reservation-form-info {
+  margin: 0;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   flex: 1 1;
-  width: min(100%, 600px);
   max-width: 100%;
   background: rgba(255, 255, 255, 0.96);
   border-radius: 20px;

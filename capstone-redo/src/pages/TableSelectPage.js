@@ -347,7 +347,7 @@ export default function TableSelectPage({
                             </button>
 
                             {/* Original Continue / Begin my Reservation button */}
-                            <button type="button" className="category-button same-width-btn" onClick={handleContinue}>
+                            <button type="button" className="category-button same-width-btn" onClick={handleContinue} disabled={!selectedTable || isSaving}>
                                 Continue with Table {selectedTable ? selectedTable.id : " "}
                             </button>
                         </div>

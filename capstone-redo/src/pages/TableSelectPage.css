@@ -6,6 +6,21 @@
   margin: 0;
 }
 
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 16px;
+  width: clamp(300px, 100%, 400px);
+}
+
+.form-actions .category-button {
+  flex: 1;
+  width: clamp(90px, 30%, 200px);
+  padding: 0;
+}
+
 .table-select-container {
   flex: 1;
   overflow: hidden;
@@ -40,11 +55,11 @@
   }
 
   .table-select-page .selection-options button {
-    flex: 1 1 calc(33.333% - 12px);
-    max-width: 220px;
-    width: 100%;
+    flex: 1 1 auto;
+    width: clamp(100px, 25vw, 280px);
+    max-width: 280px;
     padding: 16px 18px;
-    min-width: 0;
+    min-width: 100px;
   }
 
   .table-select-page .selection-options button:nth-of-type(1) {
@@ -72,6 +87,7 @@
   .table-select-page .btn-container .form-actions {
     flex-direction: column;
     align-items: stretch;
+    width: clamp(300px, 100%, 400px);
     gap: 12px;
   }
 
@@ -84,19 +100,61 @@
 
   .table-select-page .category-button.same-width-btn {
     max-width: none;
-    width: 100%;
+    width: clamp(100px, 30%, 400px);
     min-width: 0;
   }
 }
 
 @media (max-width: 600px) {
   .table-select-page .selection-options button {
-    flex: 1 1 100%;
-    max-width: auto;
+    flex: 1 1 auto;
+    width: clamp(80px, 20vw, 220px);
+    max-width: 220px;
+    min-width: 80px;
   }
   .selection-options, .category-button.same-width-btn {
     padding: 16px;
     margin: 0;
-    width: calc(100% - 32px);
+    width: 100px;
   }
+}
+
+/* Table Select Button Styles */
+.table-select-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 200px;
+  background: #edefee;
+  color: #333333;
+  border-color: transparent;
+  text-transform: capitalize;
+}
+
+.table-select-button:hover {
+  transform: translateY(-1px);
+  background: #f4ce14;
+  color: #333333;
+  border-color: #495e57;
+}
+
+.table-select-button.active {
+  background: #495e57;
+  color: #ffffff;
+  border-color: #495e57;
+}
+
+.table-select-button:active {
+  transform: scale(0.98);
 }

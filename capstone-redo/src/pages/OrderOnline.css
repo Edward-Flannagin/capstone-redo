@@ -512,10 +512,10 @@
     flex: 1;
   }
 
-  .category-button {
+  /* .category-button {
     white-space: nowrap;
     flex: 0 0 auto;
-  }
+  } */
 
   .menu-items-section {
     order: 3;
