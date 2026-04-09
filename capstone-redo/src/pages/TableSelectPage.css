@@ -92,6 +92,11 @@
 @media (max-width: 600px) {
   .table-select-page .selection-options button {
     flex: 1 1 100%;
-    max-width: none;
+    max-width: auto;
+  }
+  .selection-options, .category-button.same-width-btn {
+    padding: 16px;
+    margin: 0;
+    width: calc(100% - 32px);
   }
 }
